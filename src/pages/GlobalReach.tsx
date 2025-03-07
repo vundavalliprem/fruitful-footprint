@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { Globe, MapPin, Ship, Plane } from 'lucide-react';
+import { Globe, MapPin, Ship, Plane, Leaf, Package } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/common/ScrollReveal';
