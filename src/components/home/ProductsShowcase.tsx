@@ -9,17 +9,10 @@ import ScrollReveal from '../common/ScrollReveal';
 const products = [
   {
     id: "1",
-    name: 'Alphonso Mangoes',
-    image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Known as the "King of Mangoes", renowned for their rich, creamy texture and distinct sweet flavor.',
-    link: '/products/mangoes/alphonso'
-  },
-  {
-    id: "2",
-    name: 'Kesar Mangoes',
-    image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Named for their saffron-colored pulp, featuring a sweet and aromatic taste profile.',
-    link: '/products/mangoes/kesar'
+    name: 'Imam Pasand Mangoes',
+    image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'A delicious variety with aromatic flavor and smooth texture, particularly loved for its unique taste.',
+    link: '/products/mangoes/imam-pasand'
   },
   {
     id: "3",
@@ -41,13 +34,6 @@ const products = [
     image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
     description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
     link: '/products/mangoes/cheruku-rasalu'
-  },
-  {
-    id: "6",
-    name: 'Mallika Mangoes',
-    image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'A hybrid variety with rich, sweet flavor and minimal fiber, excellent for export.',
-    link: '/products/mangoes/mallika'
   }
 ];
 

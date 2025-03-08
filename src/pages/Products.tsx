@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
@@ -83,9 +84,9 @@ const Products = () => {
               label="Pulses"
             />
             <TabButton 
-              active={activeTab === 'grains'} 
-              onClick={() => handleTabChange('grains')}
-              label="Grains"
+              active={activeTab === 'vegetables'} 
+              onClick={() => handleTabChange('vegetables')}
+              label="Vegetables"
             />
             <TabButton 
               active={activeTab === 'spices'} 
@@ -109,7 +110,7 @@ const Products = () => {
           {activeTab === 'fruits' && <FruitsProducts />}
           {activeTab === 'rice' && <RiceProducts />}
           {activeTab === 'pulses' && <PulsesProducts />}
-          {activeTab === 'grains' && <GrainsProducts />}
+          {activeTab === 'vegetables' && <VegetablesProducts />}
           {activeTab === 'spices' && <SpicesProducts />}
           {activeTab === 'millets' && <MilletsProducts />}
         </div>
@@ -282,7 +283,7 @@ const AllProducts = () => (
   <div>
     <div className="mb-12">
       <p className="text-lg text-gray-700 mb-8">
-        AGROVITAL EXPORTS offers a diverse portfolio of premium agricultural products from India's finest farms. From succulent Alphonso mangoes to aromatic basmati rice, each product is carefully selected, processed, and exported to meet international quality standards.
+        AGROVITAL EXPORTS offers a diverse portfolio of premium agricultural products from India's finest farms. From succulent mangoes to aromatic basmati rice, each product is carefully selected, processed, and exported to meet international quality standards.
       </p>
       
       <div className="flex flex-col gap-8">
@@ -308,10 +309,10 @@ const AllProducts = () => (
         />
         
         <CategoryPreviewSection 
-          title="Pulses & Lentils"
-          subtitle="Protein-rich pulses and lentils, cleaned and processed for export"
-          viewAllLink="/products/pulses"
-          products={pulseProducts.slice(0, 3)}
+          title="Vegetables"
+          subtitle="Fresh, seasonal vegetables grown using sustainable farming practices"
+          viewAllLink="/products/vegetables"
+          products={vegetableProducts.slice(0, 3)}
         />
       </div>
     </div>
@@ -439,17 +440,17 @@ const PulsesProducts = () => (
   </div>
 );
 
-const GrainsProducts = () => (
+const VegetablesProducts = () => (
   <div>
     <ScrollReveal animation="fadeIn">
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Quality Grains</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Fresh Vegetables</h2>
         <p className="text-lg text-gray-700 mb-8">
-          Our grain exports include premium wheat varieties, maize, and other cereal grains produced in India's agricultural heartland, processed and packaged to international standards.
+          Our carefully selected vegetables are grown using sustainable farming practices, ensuring peak freshness, flavor, and nutritional value when they reach international markets.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {grainProducts.map((product, index) => (
+          {vegetableProducts.map((product, index) => (
             <ScrollReveal animation="zoomIn" delay={100 * index} key={product.id}>
               <ProductCard product={product} />
             </ScrollReveal>
@@ -505,21 +506,11 @@ const MilletsProducts = () => (
 const mangoProducts = [
   {
     id: 'm1',
-    name: 'Alphonso Mango',
+    name: 'Imam Pasand Mango',
     image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'The king of mangoes, known for its rich, sweet flavor and aromatic flesh.',
+    description: 'A delicious variety with aromatic flavor and smooth texture, particularly loved for its unique taste.',
     price: '$45-$60 per box',
-    origin: 'Ratnagiri, Maharashtra',
-    seasonality: 'April to June',
-    category: 'mangoes'
-  },
-  {
-    id: 'm2',
-    name: 'Kesar Mango',
-    image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Named for its saffron-colored pulp, sweet and aromatic.',
-    price: '$35-$50 per box',
-    origin: 'Junagadh, Gujarat',
+    origin: 'Andhra Pradesh, Tamil Nadu',
     seasonality: 'May to July',
     category: 'mangoes'
   },
@@ -531,36 +522,6 @@ const mangoProducts = [
     price: '$30-$45 per box',
     origin: 'Andhra Pradesh',
     seasonality: 'April to June',
-    category: 'mangoes'
-  },
-  {
-    id: 'm4',
-    name: 'Mallika Mango',
-    image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'A hybrid variety with rich, sweet flavor and minimal fiber.',
-    price: '$35-$48 per box',
-    origin: 'Various regions',
-    seasonality: 'June to July',
-    category: 'mangoes'
-  },
-  {
-    id: 'm5',
-    name: 'Dasheri Mango',
-    image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Medium-sized mangoes with a distinct aroma and sweet taste.',
-    price: '$28-$42 per box',
-    origin: 'Uttar Pradesh',
-    seasonality: 'June to July',
-    category: 'mangoes'
-  },
-  {
-    id: 'm6',
-    name: 'Langra Mango',
-    image: 'https://images.unsplash.com/photo-1587486913107-53b37e4bc760?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Aromatic green mangoes with a sweet-tart flavor profile.',
-    price: '$32-$46 per box',
-    origin: 'Uttar Pradesh, Bihar',
-    seasonality: 'July to August',
     category: 'mangoes'
   },
   {
@@ -771,69 +732,99 @@ const pulseProducts = [
     origin: 'Madhya Pradesh, Uttar Pradesh',
     seasonality: 'Available year-round',
     category: 'pulses'
+  },
+  {
+    id: 'p7',
+    name: 'Green Gram (Whole Moong)',
+    image: 'https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Whole green lentils with high protein content, ideal for sprouting.',
+    price: '$9-$16 per kg',
+    origin: 'Maharashtra, Rajasthan',
+    seasonality: 'Available year-round',
+    category: 'pulses'
   }
 ];
 
-const grainProducts = [
+const vegetableProducts = [
   {
-    id: 'g1',
-    name: 'Premium Wheat',
-    image: 'https://images.unsplash.com/photo-1543257580-7269da773bf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'High-protein wheat suitable for bread and other baked goods.',
-    price: '$6-$12 per kg',
-    origin: 'Punjab, Haryana',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    id: 'v1',
+    name: 'Tomato',
+    image: 'https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Bright red, juicy tomatoes available in several varieties for different culinary uses.',
+    price: '$5-$10 per box',
+    origin: 'Various regions across India',
+    seasonality: 'Year-round',
+    category: 'vegetables'
   },
   {
-    id: 'g2',
-    name: 'Corn (Maize)',
-    image: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Premium quality dried corn kernels for various culinary uses.',
-    price: '$5-$10 per kg',
-    origin: 'Karnataka, Andhra Pradesh',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    id: 'v2',
+    name: 'Brinjal (Eggplant)',
+    image: 'https://images.unsplash.com/photo-1613499920035-616e32d46352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Versatile vegetable available in various sizes and colors with smooth, meaty texture.',
+    price: '$6-$12 per box',
+    origin: 'Karnataka, Maharashtra',
+    seasonality: 'Year-round',
+    category: 'vegetables'
   },
   {
-    id: 'g3',
-    name: 'Barley',
-    image: 'https://images.unsplash.com/photo-1631984564919-1d99181002ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Nutrient-rich grain with a chewy texture and nutty flavor.',
-    price: '$7-$14 per kg',
-    origin: 'Rajasthan, Uttar Pradesh',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    id: 'v3',
+    name: 'Okra (Lady Finger)',
+    image: 'https://images.unsplash.com/photo-1629159383024-08ffcc1be5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Tender green pods with mild flavor, perfect for various cooking methods.',
+    price: '$7-$14 per box',
+    origin: 'Gujarat, Andhra Pradesh',
+    seasonality: 'Summer, monsoon',
+    category: 'vegetables'
   },
   {
-    id: 'g4',
-    name: 'Amaranth',
-    image: 'https://images.unsplash.com/photo-1614292264554-7dca1d6466d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Ancient grain that\'s gluten-free and high in protein.',
-    price: '$10-$18 per kg',
-    origin: 'Uttarakhand, Himachal Pradesh',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    id: 'v4',
+    name: 'Bottle Gourd',
+    image: 'https://images.unsplash.com/photo-1604391683216-e2945e3a1bab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Light green, elongated gourd with mild flavor and high water content.',
+    price: '$5-$10 per box',
+    origin: 'Uttar Pradesh, Bihar',
+    seasonality: 'Year-round',
+    category: 'vegetables'
   },
   {
-    id: 'g5',
-    name: 'Quinoa',
-    image: 'https://images.unsplash.com/photo-1598286520250-a252720e6dc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Complete protein grain with a light, fluffy texture when cooked.',
-    price: '$15-$25 per kg',
+    id: 'v5',
+    name: 'Green Chilli',
+    image: 'https://images.unsplash.com/photo-1590163173774-94730362a13c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Spicy green chilies in various heat levels for adding flavor to dishes.',
+    price: '$8-$15 per kg',
     origin: 'Andhra Pradesh, Karnataka',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    seasonality: 'Year-round',
+    category: 'vegetables'
   },
   {
-    id: 'g6',
-    name: 'Buckwheat',
-    image: 'https://images.unsplash.com/photo-1602581290709-000f802ac8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Gluten-free pseudocereal with earthy flavor and high nutritional value.',
-    price: '$9-$16 per kg',
-    origin: 'Himachal Pradesh, Uttarakhand',
-    seasonality: 'Available year-round',
-    category: 'grains'
+    id: 'v6',
+    name: 'Curry Leaves',
+    image: 'https://images.unsplash.com/photo-1600545992527-f1a0eaf7d283?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Aromatic leaves essential in South Indian cooking with distinctive flavor.',
+    price: '$10-$18 per kg',
+    origin: 'Tamil Nadu, Kerala',
+    seasonality: 'Year-round',
+    category: 'vegetables'
+  },
+  {
+    id: 'v7',
+    name: 'Drumstick',
+    image: 'https://images.unsplash.com/photo-1616617538067-0d408f25107a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Long, slender pods from the Moringa tree, rich in nutrients and flavor.',
+    price: '$7-$14 per kg',
+    origin: 'Tamil Nadu, Andhra Pradesh',
+    seasonality: 'Year-round',
+    category: 'vegetables'
+  },
+  {
+    id: 'v8',
+    name: 'Ash Gourd',
+    image: 'https://images.unsplash.com/photo-1591982889252-5df0288e138b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Large, round gourd with white flesh, commonly used in both savory dishes and sweets.',
+    price: '$6-$12 per gourd',
+    origin: 'Kerala, Tamil Nadu',
+    seasonality: 'Year-round',
+    category: 'vegetables'
   }
 ];
 
@@ -923,7 +914,7 @@ const milletProducts = [
   },
   {
     id: 'mi3',
-    name: 'Foxtail Millet',
+    name: 'Foxtail Millet (Kakum/Kangni)',
     image: 'https://images.unsplash.com/photo-1586201375761-83865001e8ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     description: 'Small-grained millet with mild flavor and high fiber content.',
     price: '$8-$15 per kg',
@@ -933,7 +924,7 @@ const milletProducts = [
   },
   {
     id: 'mi4',
-    name: 'Little Millet',
+    name: 'Little Millet (Samai)',
     image: 'https://images.unsplash.com/photo-1601458456420-f99fe5cd842c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     description: 'Tiny-grained millet similar to rice with high iron content.',
     price: '$7-$14 per kg',
@@ -943,7 +934,7 @@ const milletProducts = [
   },
   {
     id: 'mi5',
-    name: 'Barnyard Millet',
+    name: 'Barnyard Millet (Sanwa)',
     image: 'https://images.unsplash.com/photo-1586201374034-b26defd89a7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     description: 'Fast-cooking millet with high fiber and low glycemic index.',
     price: '$9-$16 per kg',
@@ -958,6 +949,26 @@ const milletProducts = [
     description: 'Ancient grain known for its high fiber content and digestibility.',
     price: '$8-$15 per kg',
     origin: 'Tamil Nadu, Karnataka',
+    seasonality: 'Available year-round',
+    category: 'millets'
+  },
+  {
+    id: 'mi7',
+    name: 'Proso Millet (Chena)',
+    image: 'https://images.unsplash.com/photo-1574323347407-f5e1c0cf4b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Quick-cooking millet with mild flavor, ideal for porridge and baking.',
+    price: '$7-$14 per kg',
+    origin: 'Maharashtra, Gujarat',
+    seasonality: 'Available year-round',
+    category: 'millets'
+  },
+  {
+    id: 'mi8',
+    name: 'Sorghum (Jowar)',
+    image: 'https://images.unsplash.com/photo-1567370334335-7f969057f836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Versatile grain with mild, sweet flavor, suitable for various culinary applications.',
+    price: '$6-$12 per kg',
+    origin: 'Maharashtra, Karnataka',
     seasonality: 'Available year-round',
     category: 'millets'
   }

@@ -9,7 +9,7 @@ const HeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1611921561569-f517709447a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          src="https://images.unsplash.com/photo-1621517489053-77fadb5c4e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
           alt="Premium agricultural products" 
           className="w-full h-full object-cover"
         />
