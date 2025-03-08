@@ -9,11 +9,11 @@ const HeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="Farm field with mangoes" 
+          src="https://images.unsplash.com/photo-1621849400072-f554417f7051?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          alt="Assortment of agricultural products" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
       {/* Content */}
