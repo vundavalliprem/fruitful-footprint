@@ -78,7 +78,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link to="/contact" className="cta-button-primary">
+            <Link to="/request-quote" className="cta-button-primary">
               Request a Quote
             </Link>
           </div>
@@ -127,7 +127,7 @@ const Navbar = () => {
           <Link to="/contact" className="nav-link text-lg" onClick={() => setIsOpen(false)}>Contact</Link>
           
           <div className="pt-4">
-            <Link to="/contact" className="cta-button-primary block text-center" onClick={() => setIsOpen(false)}>
+            <Link to="/request-quote" className="cta-button-primary block text-center" onClick={() => setIsOpen(false)}>
               Request a Quote
             </Link>
           </div>
