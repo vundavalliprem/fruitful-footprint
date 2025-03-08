@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
@@ -532,7 +531,7 @@ const mangoProducts = [
   {
     id: 'm3',
     name: 'Banganapalli Mango',
-    image: 'https://images.unsplash.com/photo-1519096845289-95806ee03a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/527c24f3-b802-408c-aa65-601f97a658f1.png',
     description: 'Known as the "King of Mangoes" in South India, featuring a fibreless pulp.',
     price: '$30-$45 per box',
     origin: 'Andhra Pradesh',
@@ -567,6 +566,16 @@ const mangoProducts = [
     price: '$32-$46 per box',
     origin: 'Uttar Pradesh, Bihar',
     seasonality: 'July to August',
+    category: 'mangoes'
+  },
+  {
+    id: 'm7',
+    name: 'Cheruku Rasalu Mango',
+    image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
+    description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
+    price: '$40-$55 per box',
+    origin: 'Andhra Pradesh',
+    seasonality: 'May to July',
     category: 'mangoes'
   }
 ];

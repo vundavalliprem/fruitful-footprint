@@ -12,7 +12,7 @@ const AboutPreview = () => {
           <ScrollReveal animation="slideInLeft">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1591028027917-d5ef5134ef67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/lovable-uploads/d0e176b3-a121-4487-922e-68ba1fa462b5.png" 
                 alt="Mango farm" 
                 className="rounded-lg shadow-xl w-full"
               />

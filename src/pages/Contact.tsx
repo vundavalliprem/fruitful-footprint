@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import SectionHeading from '../components/ui/SectionHeading';
@@ -85,8 +84,8 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Phone</h3>
                 <p className="text-gray-600 mb-4">We're available during business hours</p>
-                <a href="tel:+919876543210" className="text-agro-leaf hover:underline mt-auto font-medium">
-                  +91 98765 43210
+                <a href="tel:+919989899966" className="text-agro-leaf hover:underline mt-auto font-medium">
+                  +91 99898 99966
                 </a>
               </div>
             </ScrollReveal>
@@ -98,8 +97,8 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Email</h3>
                 <p className="text-gray-600 mb-4">Send us an email anytime</p>
-                <a href="mailto:info@agrovitalexports.com" className="text-agro-leaf hover:underline mt-auto font-medium">
-                  info@agrovitalexports.com
+                <a href="mailto:vundavalliprem@gmail.com" className="text-agro-leaf hover:underline mt-auto font-medium">
+                  vundavalliprem@gmail.com
                 </a>
               </div>
             </ScrollReveal>
@@ -111,8 +110,11 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Address</h3>
                 <p className="text-gray-600 mb-4">Our headquarters</p>
-                <address className="text-gray-700 not-italic mt-auto font-medium">
-                  123 Export Plaza, Business District<br />Mumbai, Maharashtra 400001
+                <address className="text-gray-700 not-italic mt-auto font-medium text-center">
+                  HAPPY HOMES APARTMENT FLAT NO 506<br />
+                  JAMMALAPALE, JALADANKI MANDALAM<br />
+                  NELLORE DISTRICT, ANDHRA PRADESH<br />
+                  PIN: 524223
                 </address>
               </div>
             </ScrollReveal>
