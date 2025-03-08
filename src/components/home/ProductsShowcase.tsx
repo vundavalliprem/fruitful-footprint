@@ -9,45 +9,45 @@ import ScrollReveal from '../common/ScrollReveal';
 const products = [
   {
     id: "1",
-    name: 'Premium Mangoes',
+    name: 'Alphonso Mangoes',
     image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Explore our range of premium-quality mangoes, including Alphonso, Kesar, and Banganapalli varieties.',
-    link: '/products/mangoes'
+    description: 'Known as the "King of Mangoes", renowned for their rich, creamy texture and distinct sweet flavor.',
+    link: '/products/mangoes/alphonso'
   },
   {
     id: "2",
-    name: 'Exotic Fruits',
-    image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Fresh, hand-picked fruits from the best farms across India, ready for global distribution.',
-    link: '/products/fruits'
+    name: 'Kesar Mangoes',
+    image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Named for their saffron-colored pulp, featuring a sweet and aromatic taste profile.',
+    link: '/products/mangoes/kesar'
   },
   {
     id: "3",
-    name: 'Premium Rice',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e8ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'High-quality basmati and non-basmati rice varieties, carefully processed and packaged.',
-    link: '/products/rice'
+    name: 'Banganapalli Mangoes',
+    image: '/lovable-uploads/527c24f3-b802-408c-aa65-601f97a658f1.png',
+    description: 'Known as the "King of Mangoes" in South India, featuring a fibreless pulp with sweet flavor.',
+    link: '/products/mangoes/banganapalli'
   },
   {
     id: "4",
-    name: 'Organic Pulses',
-    image: 'https://images.unsplash.com/photo-1515543904379-3d757abe63ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Nutritious and wholesome pulses including lentils, chickpeas, and beans, grown using sustainable practices.',
-    link: '/products/pulses'
+    name: 'Suvernarekha Mangoes',
+    image: 'https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'A premium variety with golden-yellow skin, sweet aromatic flesh and low fiber content.',
+    link: '/products/mangoes/suvernarekha'
   },
   {
     id: "5",
-    name: 'Authentic Spices',
-    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Traditional Indian spices that bring authentic flavors to global kitchens and food industries.',
-    link: '/products/spices'
+    name: 'Cheruku Rasalu Mangoes',
+    image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
+    description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
+    link: '/products/mangoes/cheruku-rasalu'
   },
   {
     id: "6",
-    name: 'Nutrient-Rich Millets',
-    image: 'https://images.unsplash.com/photo-1612970547815-d7732046562c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Ancient grains packed with nutrients and health benefits, sourced from sustainable farms.',
-    link: '/products/millets'
+    name: 'Mallika Mangoes',
+    image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'A hybrid variety with rich, sweet flavor and minimal fiber, excellent for export.',
+    link: '/products/mangoes/mallika'
   }
 ];
 

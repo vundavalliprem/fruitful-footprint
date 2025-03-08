@@ -1,7 +1,7 @@
 
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { ArrowLeft, Truck, Globe, Calendar, Shield, Check } from "lucide-react";
+import { ArrowLeft, Truck, Globe, Calendar, Shield, Check, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useNavigate } from "react-router-dom";

@@ -265,7 +265,6 @@ const Products = () => {
   );
 };
 
-// Tab Button Component
 const TabButton = ({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) => (
   <button
     onClick={onClick}
@@ -279,7 +278,6 @@ const TabButton = ({ active, onClick, label }: { active: boolean; onClick: () =>
   </button>
 );
 
-// Product Category Components
 const AllProducts = () => (
   <div>
     <div className="mb-12">
@@ -320,7 +318,6 @@ const AllProducts = () => (
   </div>
 );
 
-// Category Preview Section
 const CategoryPreviewSection = ({ 
   title, 
   subtitle, 
@@ -358,7 +355,6 @@ const CategoryPreviewSection = ({
   </ScrollReveal>
 );
 
-// Individual Product Category Components
 const MangoesProducts = () => (
   <div>
     <ScrollReveal animation="fadeIn">
@@ -506,7 +502,6 @@ const MilletsProducts = () => (
   </div>
 );
 
-// Sample product data
 const mangoProducts = [
   {
     id: 'm1',
@@ -574,6 +569,16 @@ const mangoProducts = [
     image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
     description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
     price: '$40-$55 per box',
+    origin: 'Andhra Pradesh',
+    seasonality: 'May to July',
+    category: 'mangoes'
+  },
+  {
+    id: 'm8',
+    name: 'Suvernarekha Mango',
+    image: 'https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'A premium variety with golden-yellow skin, sweet aromatic flesh and low fiber content.',
+    price: '$38-$52 per box',
     origin: 'Andhra Pradesh',
     seasonality: 'May to July',
     category: 'mangoes'
