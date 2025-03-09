@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
@@ -507,7 +506,7 @@ const mangoProducts = [
   {
     id: 'm1',
     name: 'Imam Pasand Mango',
-    image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'A delicious variety with aromatic flavor and smooth texture, particularly loved for its unique taste.',
     price: '$45-$60 per box',
     origin: 'Andhra Pradesh, Tamil Nadu',
@@ -517,7 +516,7 @@ const mangoProducts = [
   {
     id: 'm3',
     name: 'Banganapalli Mango',
-    image: '/lovable-uploads/527c24f3-b802-408c-aa65-601f97a658f1.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Known as the "King of Mangoes" in South India, featuring a fibreless pulp.',
     price: '$30-$45 per box',
     origin: 'Andhra Pradesh',
@@ -527,7 +526,7 @@ const mangoProducts = [
   {
     id: 'm7',
     name: 'Cheruku Rasalu Mango',
-    image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
     price: '$40-$55 per box',
     origin: 'Andhra Pradesh',
@@ -537,7 +536,7 @@ const mangoProducts = [
   {
     id: 'm8',
     name: 'Suvernarekha Mango',
-    image: 'https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'A premium variety with golden-yellow skin, sweet aromatic flesh and low fiber content.',
     price: '$38-$52 per box',
     origin: 'Andhra Pradesh',
@@ -550,7 +549,7 @@ const fruitProducts = [
   {
     id: 'f1',
     name: 'Pomegranate',
-    image: 'https://images.unsplash.com/photo-1615485500704-8e990f9d3a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png', // Using a placeholder image
     description: 'Ruby-red arils with the perfect balance of sweetness and tartness.',
     price: '$25-$35 per box',
     origin: 'Maharashtra, Gujarat',
@@ -560,7 +559,7 @@ const fruitProducts = [
   {
     id: 'f2',
     name: 'Litchi',
-    image: 'https://images.unsplash.com/photo-1588262582928-3b213c17eee5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png', // Using a placeholder image
     description: 'Fragrant, juicy fruits with translucent white flesh and sweet flavor.',
     price: '$30-$42 per box',
     origin: 'Bihar, West Bengal',
@@ -613,7 +612,7 @@ const riceProducts = [
   {
     id: 'r1',
     name: 'Basmati Rice',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e8ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png', // Using a placeholder image
     description: 'Long-grain aromatic rice with distinctive fragrance and flavor.',
     price: '$18-$30 per kg (premium)',
     origin: 'Punjab, Haryana',
@@ -676,7 +675,7 @@ const pulseProducts = [
   {
     id: 'p1',
     name: 'Yellow Moong Dal',
-    image: 'https://images.unsplash.com/photo-1515543904379-3d757afe73a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png', // Using a placeholder image
     description: 'Split yellow lentils, easy to digest with mild, sweet flavor.',
     price: '$8-$15 per kg',
     origin: 'Madhya Pradesh, Maharashtra',
@@ -715,263 +714,4 @@ const pulseProducts = [
   },
   {
     id: 'p5',
-    name: 'Urad Dal (Black Gram)',
-    image: 'https://images.unsplash.com/photo-1593001776761-db0daa8d78a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Split black lentils, essential for dosa and idli batter.',
-    price: '$10-$18 per kg',
-    origin: 'Andhra Pradesh, Tamil Nadu',
-    seasonality: 'Available year-round',
-    category: 'pulses'
-  },
-  {
-    id: 'p6',
-    name: 'Kabuli Chana (Chickpeas)',
-    image: 'https://images.unsplash.com/photo-1515543904379-b5916adf49a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Large, cream-colored chickpeas with a nutty flavor and firm texture.',
-    price: '$8-$15 per kg',
-    origin: 'Madhya Pradesh, Uttar Pradesh',
-    seasonality: 'Available year-round',
-    category: 'pulses'
-  },
-  {
-    id: 'p7',
-    name: 'Green Gram (Whole Moong)',
-    image: 'https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Whole green lentils with high protein content, ideal for sprouting.',
-    price: '$9-$16 per kg',
-    origin: 'Maharashtra, Rajasthan',
-    seasonality: 'Available year-round',
-    category: 'pulses'
-  }
-];
-
-const vegetableProducts = [
-  {
-    id: 'v1',
-    name: 'Tomato',
-    image: 'https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Bright red, juicy tomatoes available in several varieties for different culinary uses.',
-    price: '$5-$10 per box',
-    origin: 'Various regions across India',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v2',
-    name: 'Brinjal (Eggplant)',
-    image: 'https://images.unsplash.com/photo-1613499920035-616e32d46352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Versatile vegetable available in various sizes and colors with smooth, meaty texture.',
-    price: '$6-$12 per box',
-    origin: 'Karnataka, Maharashtra',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v3',
-    name: 'Okra (Lady Finger)',
-    image: 'https://images.unsplash.com/photo-1629159383024-08ffcc1be5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Tender green pods with mild flavor, perfect for various cooking methods.',
-    price: '$7-$14 per box',
-    origin: 'Gujarat, Andhra Pradesh',
-    seasonality: 'Summer, monsoon',
-    category: 'vegetables'
-  },
-  {
-    id: 'v4',
-    name: 'Bottle Gourd',
-    image: 'https://images.unsplash.com/photo-1604391683216-e2945e3a1bab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Light green, elongated gourd with mild flavor and high water content.',
-    price: '$5-$10 per box',
-    origin: 'Uttar Pradesh, Bihar',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v5',
-    name: 'Green Chilli',
-    image: 'https://images.unsplash.com/photo-1590163173774-94730362a13c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Spicy green chilies in various heat levels for adding flavor to dishes.',
-    price: '$8-$15 per kg',
-    origin: 'Andhra Pradesh, Karnataka',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v6',
-    name: 'Curry Leaves',
-    image: 'https://images.unsplash.com/photo-1600545992527-f1a0eaf7d283?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Aromatic leaves essential in South Indian cooking with distinctive flavor.',
-    price: '$10-$18 per kg',
-    origin: 'Tamil Nadu, Kerala',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v7',
-    name: 'Drumstick',
-    image: 'https://images.unsplash.com/photo-1616617538067-0d408f25107a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Long, slender pods from the Moringa tree, rich in nutrients and flavor.',
-    price: '$7-$14 per kg',
-    origin: 'Tamil Nadu, Andhra Pradesh',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  },
-  {
-    id: 'v8',
-    name: 'Ash Gourd',
-    image: 'https://images.unsplash.com/photo-1591982889252-5df0288e138b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Large, round gourd with white flesh, commonly used in both savory dishes and sweets.',
-    price: '$6-$12 per gourd',
-    origin: 'Kerala, Tamil Nadu',
-    seasonality: 'Year-round',
-    category: 'vegetables'
-  }
-];
-
-const spiceProducts = [
-  {
-    id: 's1',
-    name: 'Premium Turmeric',
-    image: 'https://images.unsplash.com/photo-1615485500704-8e990f9d3a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Vibrant yellow spice with earthy aroma and high curcumin content.',
-    price: '$12-$22 per kg',
-    origin: 'Tamil Nadu, Andhra Pradesh',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  },
-  {
-    id: 's2',
-    name: 'Black Pepper',
-    image: 'https://images.unsplash.com/photo-1599901500777-187d9c6ec4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'The "King of Spices" with bold, sharp flavor and aroma.',
-    price: '$25-$40 per kg',
-    origin: 'Kerala',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  },
-  {
-    id: 's3',
-    name: 'Cardamom',
-    image: 'https://images.unsplash.com/photo-1588204215342-de5cc52efc35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Aromatic pods with complex flavor used in sweet and savory dishes.',
-    price: '$45-$70 per kg',
-    origin: 'Kerala, Karnataka',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  },
-  {
-    id: 's4',
-    name: 'Cinnamon',
-    image: 'https://images.unsplash.com/photo-1608403689838-a9579d227b7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Sweet, woody spice from the inner bark of Cinnamomum trees.',
-    price: '$20-$35 per kg',
-    origin: 'Kerala, Tamil Nadu',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  },
-  {
-    id: 's5',
-    name: 'Cumin Seeds',
-    image: 'https://images.unsplash.com/photo-1597700877070-8be51a5db00d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Aromatic seeds with earthy, nutty flavor essential in many cuisines.',
-    price: '$15-$25 per kg',
-    origin: 'Gujarat, Rajasthan',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  },
-  {
-    id: 's6',
-    name: 'Saffron',
-    image: 'https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'The world\'s most expensive spice, known for its distinct aroma and color.',
-    price: '$3000-$5000 per kg',
-    origin: 'Kashmir',
-    seasonality: 'Available year-round',
-    category: 'spices'
-  }
-];
-
-const milletProducts = [
-  {
-    id: 'mi1',
-    name: 'Pearl Millet (Bajra)',
-    image: 'https://images.unsplash.com/photo-1604335078454-63babfcce469?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Gluten-free grain with nutty flavor and high nutritional value.',
-    price: '$6-$12 per kg',
-    origin: 'Rajasthan, Gujarat',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi2',
-    name: 'Finger Millet (Ragi)',
-    image: 'https://images.unsplash.com/photo-1601457562208-03725f0768d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Calcium-rich gluten-free grain with earthy flavor.',
-    price: '$7-$14 per kg',
-    origin: 'Karnataka, Tamil Nadu',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi3',
-    name: 'Foxtail Millet (Kakum/Kangni)',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e8ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Small-grained millet with mild flavor and high fiber content.',
-    price: '$8-$15 per kg',
-    origin: 'Andhra Pradesh, Karnataka',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi4',
-    name: 'Little Millet (Samai)',
-    image: 'https://images.unsplash.com/photo-1601458456420-f99fe5cd842c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Tiny-grained millet similar to rice with high iron content.',
-    price: '$7-$14 per kg',
-    origin: 'Central India',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi5',
-    name: 'Barnyard Millet (Sanwa)',
-    image: 'https://images.unsplash.com/photo-1586201374034-b26defd89a7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Fast-cooking millet with high fiber and low glycemic index.',
-    price: '$9-$16 per kg',
-    origin: 'Uttarakhand, Uttar Pradesh',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi6',
-    name: 'Kodo Millet',
-    image: 'https://images.unsplash.com/photo-1598890330671-2c95d54f73b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Ancient grain known for its high fiber content and digestibility.',
-    price: '$8-$15 per kg',
-    origin: 'Tamil Nadu, Karnataka',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi7',
-    name: 'Proso Millet (Chena)',
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1c0cf4b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Quick-cooking millet with mild flavor, ideal for porridge and baking.',
-    price: '$7-$14 per kg',
-    origin: 'Maharashtra, Gujarat',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  },
-  {
-    id: 'mi8',
-    name: 'Sorghum (Jowar)',
-    image: 'https://images.unsplash.com/photo-1567370334335-7f969057f836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    description: 'Versatile grain with mild, sweet flavor, suitable for various culinary applications.',
-    price: '$6-$12 per kg',
-    origin: 'Maharashtra, Karnataka',
-    seasonality: 'Available year-round',
-    category: 'millets'
-  }
-];
-
-export default Products;
+    name

@@ -10,28 +10,28 @@ const products = [
   {
     id: "1",
     name: 'Imam Pasand Mangoes',
-    image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'A delicious variety with aromatic flavor and smooth texture, particularly loved for its unique taste.',
     link: '/products/mangoes/imam-pasand'
   },
   {
     id: "3",
     name: 'Banganapalli Mangoes',
-    image: '/lovable-uploads/527c24f3-b802-408c-aa65-601f97a658f1.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Known as the "King of Mangoes" in South India, featuring a fibreless pulp with sweet flavor.',
     link: '/products/mangoes/banganapalli'
   },
   {
     id: "4",
     name: 'Suvernarekha Mangoes',
-    image: 'https://images.unsplash.com/photo-1596404643764-2a2461483a3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'A premium variety with golden-yellow skin, sweet aromatic flesh and low fiber content.',
     link: '/products/mangoes/suvernarekha'
   },
   {
     id: "5",
     name: 'Cheruku Rasalu Mangoes',
-    image: '/lovable-uploads/e51f5840-5890-44f6-b7ea-bfc3572f9487.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
     link: '/products/mangoes/cheruku-rasalu'
   }
@@ -49,7 +49,7 @@ const ProductsShowcase = () => {
           />
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <ScrollReveal key={product.id} delay={index * 100}>
               <ProductCard product={product} />
