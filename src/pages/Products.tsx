@@ -1,3 +1,4 @@
+<lov-code>
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
@@ -549,7 +550,7 @@ const fruitProducts = [
   {
     id: 'f1',
     name: 'Pomegranate',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png', // Using a placeholder image
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Ruby-red arils with the perfect balance of sweetness and tartness.',
     price: '$25-$35 per box',
     origin: 'Maharashtra, Gujarat',
@@ -559,7 +560,7 @@ const fruitProducts = [
   {
     id: 'f2',
     name: 'Litchi',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png', // Using a placeholder image
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Fragrant, juicy fruits with translucent white flesh and sweet flavor.',
     price: '$30-$42 per box',
     origin: 'Bihar, West Bengal',
@@ -569,7 +570,7 @@ const fruitProducts = [
   {
     id: 'f3',
     name: 'Guava',
-    image: 'https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Aromatic, tropical fruit with edible seeds and high vitamin C content.',
     price: '$18-$28 per box',
     origin: 'Various regions',
@@ -579,7 +580,7 @@ const fruitProducts = [
   {
     id: 'f4',
     name: 'Sapota (Chikoo)',
-    image: 'https://images.unsplash.com/photo-1622827697156-fd7ff2cd660e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'Sweet, malty-flavored fruits with a grainy texture.',
     price: '$20-$30 per box',
     origin: 'Karnataka, Maharashtra',
@@ -589,7 +590,7 @@ const fruitProducts = [
   {
     id: 'f5',
     name: 'Grapes',
-    image: 'https://images.unsplash.com/photo-1596363505729-4190a9506133?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Thompson Seedless and other varieties, known for sweetness and crunch.',
     price: '$22-$35 per box',
     origin: 'Maharashtra',
@@ -599,7 +600,7 @@ const fruitProducts = [
   {
     id: 'f6',
     name: 'Papaya',
-    image: 'https://images.unsplash.com/photo-1570333269937-c1bcca86275f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Sweet, butter-soft flesh with a tropical flavor profile.',
     price: '$15-$25 per box',
     origin: 'Various regions',
@@ -612,7 +613,7 @@ const riceProducts = [
   {
     id: 'r1',
     name: 'Basmati Rice',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png', // Using a placeholder image
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Long-grain aromatic rice with distinctive fragrance and flavor.',
     price: '$18-$30 per kg (premium)',
     origin: 'Punjab, Haryana',
@@ -622,7 +623,7 @@ const riceProducts = [
   {
     id: 'r2',
     name: 'Sona Masoori Rice',
-    image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'Medium-grain rice with light, fluffy texture when cooked.',
     price: '$12-$20 per kg',
     origin: 'Andhra Pradesh, Telangana',
@@ -632,7 +633,7 @@ const riceProducts = [
   {
     id: 'r3',
     name: 'Brown Basmati Rice',
-    image: 'https://images.unsplash.com/photo-1614961233913-a5113a4df86a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Whole grain basmati with nutty flavor and added nutritional benefits.',
     price: '$20-$32 per kg',
     origin: 'Punjab, Haryana',
@@ -642,7 +643,7 @@ const riceProducts = [
   {
     id: 'r4',
     name: 'Ponni Rice',
-    image: 'https://images.unsplash.com/photo-1568347355280-cabc7b67fc4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Popular South Indian variety with excellent cooking qualities.',
     price: '$10-$18 per kg',
     origin: 'Tamil Nadu',
@@ -652,7 +653,7 @@ const riceProducts = [
   {
     id: 'r5',
     name: 'Black Rice',
-    image: 'https://images.unsplash.com/photo-1626082675510-d45b0e339d6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Specialty rice with deep purple color and nutty taste, rich in antioxidants.',
     price: '$25-$40 per kg',
     origin: 'Manipur, North East India',
@@ -662,7 +663,7 @@ const riceProducts = [
   {
     id: 'r6',
     name: 'Red Rice',
-    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cee6a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'Whole grain rice with reddish bran layer and high nutritional value.',
     price: '$15-$25 per kg',
     origin: 'Kerala, Karnataka',
@@ -675,7 +676,7 @@ const pulseProducts = [
   {
     id: 'p1',
     name: 'Yellow Moong Dal',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png', // Using a placeholder image
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Split yellow lentils, easy to digest with mild, sweet flavor.',
     price: '$8-$15 per kg',
     origin: 'Madhya Pradesh, Maharashtra',
@@ -685,7 +686,7 @@ const pulseProducts = [
   {
     id: 'p2',
     name: 'Toor Dal (Pigeon Pea)',
-    image: 'https://images.unsplash.com/photo-1612257999786-24995972c474?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Yellow split lentils, commonly used in sambar and other dishes.',
     price: '$10-$18 per kg',
     origin: 'Maharashtra, Karnataka',
@@ -695,7 +696,7 @@ const pulseProducts = [
   {
     id: 'p3',
     name: 'Masoor Dal (Red Lentils)',
-    image: 'https://images.unsplash.com/photo-1616523795505-1e3efc197214?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Orange-red split lentils that cook quickly with a mild, earthy flavor.',
     price: '$9-$16 per kg',
     origin: 'Uttar Pradesh, Madhya Pradesh',
@@ -705,7 +706,7 @@ const pulseProducts = [
   {
     id: 'p4',
     name: 'Chana Dal (Bengal Gram)',
-    image: 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'Split chickpeas with a nutty flavor, high in protein and fiber.',
     price: '$8-$14 per kg',
     origin: 'Maharashtra, Rajasthan',
@@ -714,4 +715,28 @@ const pulseProducts = [
   },
   {
     id: 'p5',
-    name
+    name: 'Green Gram (Whole Moong)',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    description: 'Whole green lentils with high nutritional value, used in various dishes.',
+    price: '$9-$16 per kg',
+    origin: 'Madhya Pradesh, Rajasthan',
+    seasonality: 'Available year-round',
+    category: 'pulses'
+  }
+];
+
+const vegetableProducts = [
+  {
+    id: 'v1',
+    name: 'Tomato',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    description: 'Fresh, vine-ripened tomatoes with balanced sweetness and acidity.',
+    price: '$12-$20 per box',
+    origin: 'Various regions in India',
+    seasonality: 'Year-round, peak in winter',
+    category: 'vegetables'
+  },
+  {
+    id: 'v2',
+    name: 'Brinjal (Eggplant)',
+    image: '/lovable-uploads/9551071f-00bb-4
