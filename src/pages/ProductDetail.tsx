@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowLeft, Truck, Globe, Calendar, Shield, Check, ArrowRight } from "lucide-react";
@@ -7,7 +6,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/use-toast";
 
-// Product categories and their associated products
 const productData = {
   mangoes: [
     {
@@ -186,7 +184,6 @@ const ProductDetail = () => {
   return (
     <div className="py-16 bg-gray-50">
       <div className="container-custom">
-        {/* Breadcrumb */}
         <div className="mb-8">
           <Link 
             to="/products" 
@@ -197,10 +194,8 @@ const ProductDetail = () => {
           </Link>
         </div>
 
-        {/* Product Detail Section */}
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-6 md:p-12">
-            {/* Product Images */}
             <ScrollReveal animation="fadeIn">
               <div className="space-y-6">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden">
@@ -228,7 +223,6 @@ const ProductDetail = () => {
               </div>
             </ScrollReveal>
 
-            {/* Product Information */}
             <ScrollReveal animation="slideInRight" delay={100}>
               <div className="space-y-6">
                 <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1>
@@ -309,7 +303,6 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Product Description */}
         <ScrollReveal>
           <div className="bg-white shadow-lg rounded-2xl p-6 md:p-12 mb-16">
             <SectionHeading title="Product Description" />
@@ -321,7 +314,6 @@ const ProductDetail = () => {
           </div>
         </ScrollReveal>
 
-        {/* Related Products */}
         <ScrollReveal>
           <div className="bg-white shadow-lg rounded-2xl p-6 md:p-12">
             <SectionHeading title="Related Products" subtitle="Explore other high-quality products from our collection" />
@@ -330,32 +322,47 @@ const ProductDetail = () => {
                 .filter((p: any) => p.id !== id)
                 .slice(0, 3)
                 .map((relatedProduct: any, index: number) => (
-                  <Link 
-                    key={index} 
-                    to={`/products/${category}/${relatedProduct.id}`}
-                    className="product-card group"
-                  >
-                    <div className="image-hover-zoom aspect-[4/3]">
-                      <img 
-                        src={relatedProduct.image} 
-                        alt={relatedProduct.name} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">{relatedProduct.name}</h3>
-                      <p className="text-gray-600 mb-4 line-clamp-2">{relatedProduct.description}</p>
-                      <div className="inline-flex items-center text-agro-leaf group-hover:text-agro-mango transition-colors duration-300">
-                        Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </Link>
+                  <ProductCard 
+                    key={index}
+                    product={{
+                      id: relatedProduct.id,
+                      name: relatedProduct.name,
+                      image: relatedProduct.image,
+                      description: relatedProduct.description,
+                      link: `/products/${category}/${relatedProduct.id}`,
+                      category: category
+                    }}
+                  />
                 ))}
             </div>
           </div>
         </ScrollReveal>
       </div>
     </div>
+  );
+};
+
+const ProductCard = ({ product }) => {
+  return (
+    <Link 
+      to={product.link}
+      className="product-card group"
+    >
+      <div className="image-hover-zoom aspect-[4/3]">
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+        <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
+        <div className="inline-flex items-center text-agro-leaf group-hover:text-agro-mango transition-colors duration-300">
+          Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </div>
+      </div>
+    </Link>
   );
 };
 
