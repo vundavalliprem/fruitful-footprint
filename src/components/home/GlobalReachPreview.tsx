@@ -24,7 +24,7 @@ const GlobalReachPreview = () => {
               <SectionHeading
                 title="Global Reach"
                 subtitle="Delivering premium Indian agricultural products to markets worldwide"
-                align="left"
+                center={false}
               />
               
               <p className="text-gray-700">
