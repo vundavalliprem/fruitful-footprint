@@ -29,13 +29,13 @@ const CtaSection = () => {
             
             <ScrollReveal delay={200}>
               <p className="text-white/90 text-lg max-w-3xl mx-auto mb-8">
-                Contact AGROVITAL EXPORTS today to discuss your requirements and discover how our premium-quality products can add value to your business.
+                Contact ARGOVITAL EXPORTS today to discuss your requirements and discover how our premium-quality products can add value to your business.
               </p>
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/contact" className="bg-white text-agro-leaf font-medium px-8 py-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] inline-flex items-center justify-center group">
+                <Link to="/request-quote" className="bg-white text-agro-leaf font-medium px-8 py-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] inline-flex items-center justify-center group">
                   Request a Quote <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link to="/products" className="bg-transparent text-white border border-white font-medium px-8 py-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] inline-block">

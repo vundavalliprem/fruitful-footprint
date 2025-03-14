@@ -5,7 +5,7 @@ import SectionHeading from '../ui/SectionHeading';
 import ProductCard from '../common/ProductCard';
 import ScrollReveal from '../common/ScrollReveal';
 
-// Product data with corrected images for different categories
+// Product data with correct images for different categories
 const products = [
   {
     id: "1",

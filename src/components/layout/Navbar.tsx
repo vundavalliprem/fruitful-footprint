@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Leaf } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +38,15 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <div className="flex items-center">
-              <div className="mr-2 bg-agro-leaf rounded-full p-2 text-white">
-                <Leaf size={20} className="animate-pulse" />
+              <div className="relative mr-3 h-12 w-12 bg-gradient-to-tr from-agro-leaf to-agro-mango rounded-full overflow-hidden flex items-center justify-center shadow-md">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
+                  <path d="M18 4C10.268 4 4 10.268 4 18C4 25.732 10.268 32 18 32C25.732 32 32 25.732 32 18C32 10.268 25.732 4 18 4Z" fill="white"/>
+                  <path d="M18 7C15.5 7 13.5 9 13.5 12C13.5 15 15.5 19 18 19C20.5 19 22.5 15 22.5 12C22.5 9 20.5 7 18 7Z" fill="#52A447"/>
+                  <path d="M18 19C15.5 19 13.5 21 13.5 24C13.5 27 15.5 29 18 29C20.5 29 22.5 27 22.5 24C22.5 21 20.5 19 18 19Z" fill="#52A447"/>
+                  <path d="M7 18C7 15.5 9 13.5 12 13.5C15 13.5 19 15.5 19 18C19 20.5 15 22.5 12 22.5C9 22.5 7 20.5 7 18Z" fill="#FFA62B"/>
+                  <path d="M19 18C19 15.5 21 13.5 24 13.5C27 13.5 29 15.5 29 18C29 20.5 27 22.5 24 22.5C21 22.5 19 20.5 19 18Z" fill="#FFA62B"/>
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-tr from-agro-leaf/40 to-agro-mango/40 rounded-full"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-agro-leaf tracking-wider">ARGO<span className="text-agro-mango">VITAL</span></span>
