@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Leaf, MapPin, Mail, Phone } from 'lucide-react';
-import { useMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
 
   // Close menu when route changes
   useEffect(() => {
@@ -61,11 +61,11 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <nav className={`hidden md:flex items-center space-x-8`}>
-            <NavLink to="/" exact>Home</NavLink>
-            <NavLink to="/about">About Us</NavLink>
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/global-reach">Global Reach</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/" exact={true}>Home</NavLink>
+            <NavLink to="/about" exact={false}>About Us</NavLink>
+            <NavLink to="/products" exact={false}>Products</NavLink>
+            <NavLink to="/global-reach" exact={false}>Global Reach</NavLink>
+            <NavLink to="/contact" exact={false}>Contact</NavLink>
             <Link to="/request-quote" className="cta-button-primary">
               Get a Quote
             </Link>
