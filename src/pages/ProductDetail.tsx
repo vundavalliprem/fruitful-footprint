@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowLeft, Truck, Globe, Calendar, Shield, Check, ArrowRight } from "lucide-react";
@@ -5,6 +6,7 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/use-toast";
+import ProductCard from "@/components/common/ProductCard";
 
 const productData = {
   mangoes: [
@@ -145,6 +147,13 @@ const ProductDetail = () => {
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [activeImage, setActiveImage] = useState('');
+  const [showInquiryForm, setShowInquiryForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -153,6 +162,10 @@ const ProductDetail = () => {
       if (foundProduct) {
         setProduct(foundProduct);
         setActiveImage(foundProduct.image);
+        setFormData(prev => ({
+          ...prev,
+          message: `I am interested in ${foundProduct.name}. Please send me more information.`
+        }));
         setLoading(false);
       } else {
         navigate('/products');
@@ -167,6 +180,26 @@ const ProductDetail = () => {
       title: "Added to Quote",
       description: `${product.name} has been added to your quote request.`,
     });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Inquiry Sent!",
+      description: "We'll get back to you shortly about your product inquiry.",
+    });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: `I am interested in ${product.name}. Please send me more information.`
+    });
+    setShowInquiryForm(false);
   };
 
   if (loading) {
@@ -242,13 +275,6 @@ const ProductDetail = () => {
                 <div className="pt-4 border-t border-gray-200">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <Truck className="h-5 w-5 text-agro-leaf mt-0.5" />
-                      <div>
-                        <p className="font-medium text-sm">Price Range</p>
-                        <p className="text-gray-700">{product.price}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
                       <Globe className="h-5 w-5 text-agro-leaf mt-0.5" />
                       <div>
                         <p className="font-medium text-sm">Origin</p>
@@ -285,12 +311,12 @@ const ProductDetail = () => {
                 </div>
 
                 <div className="pt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                  <Link 
-                    to="/request-quote" 
+                  <button 
+                    onClick={() => setShowInquiryForm(!showInquiryForm)}
                     className="cta-button-primary"
                   >
-                    Request a Quote
-                  </Link>
+                    Inquire Now
+                  </button>
                   <button 
                     onClick={handleAddToQuote}
                     className="cta-button-secondary"
@@ -298,6 +324,64 @@ const ProductDetail = () => {
                     Add to Quote
                   </button>
                 </div>
+
+                {showInquiryForm && (
+                  <div className="pt-6 border-t border-gray-200 mt-6">
+                    <h3 className="text-xl font-semibold mb-4">Inquire About This Product</h3>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Your Phone Number"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <textarea
+                          name="message"
+                          rows={3}
+                          placeholder="Your Message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20 resize-none"
+                          required
+                        />
+                      </div>
+                      <button 
+                        type="submit" 
+                        className="w-full py-2 px-4 bg-agro-leaf text-white rounded-md hover:bg-agro-leaf/90 transition-colors"
+                      >
+                        Submit Inquiry
+                      </button>
+                    </form>
+                  </div>
+                )}
               </div>
             </ScrollReveal>
           </div>
@@ -330,7 +414,9 @@ const ProductDetail = () => {
                       image: relatedProduct.image,
                       description: relatedProduct.description,
                       link: `/products/${category}/${relatedProduct.id}`,
-                      category: category
+                      category: category,
+                      seasonality: relatedProduct.seasonality,
+                      origin: relatedProduct.origin
                     }}
                   />
                 ))}
@@ -339,36 +425,6 @@ const ProductDetail = () => {
         </ScrollReveal>
       </div>
     </div>
-  );
-};
-
-const ProductCard = ({ product }) => {
-  return (
-    <Link 
-      to={product.link}
-      className="product-card group"
-    >
-      <div className="image-hover-zoom aspect-[4/3] relative">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 text-sm font-semibold rounded-full">
-          {product.seasonality.includes('Year-round') ? 'ALL YEAR' : 
-            product.seasonality.split(' to ').join('-').toUpperCase()}
-        </div>
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
-        <div className="w-full">
-          <button className="w-full py-2 px-4 bg-agro-leaf text-white rounded-md hover:bg-agro-leaf/90 transition-colors flex items-center justify-center">
-            View Details
-          </button>
-        </div>
-      </div>
-    </Link>
   );
 };
 

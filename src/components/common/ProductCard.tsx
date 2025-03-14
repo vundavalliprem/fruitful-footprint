@@ -39,6 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const origin = product?.origin || 'India';
   const seasonality = product?.seasonality || 'Year-round';
   
+  const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -96,12 +97,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
-  // Format the seasonality as overlay text
+  // Format the seasonality as overlay text with more stylish variants
   const getSeasonalityOverlay = () => {
     if (seasonality.toLowerCase().includes('year-round')) {
-      return 'ALL YEAR';
+      return 'AVAILABLE ALL YEAR';
     }
+    
+    if (seasonality.toLowerCase().includes('varies')) {
+      return 'SEASONAL HARVEST';
+    }
+    
     return seasonality.split(' to ').join('-').toUpperCase();
+  };
+
+  // Get seasonality badge color based on product type
+  const getSeasonalityBadgeClass = () => {
+    const category = product?.category || '';
+    switch(category) {
+      case 'mangoes': return 'bg-gradient-to-r from-amber-500 to-amber-600';
+      case 'rice': return 'bg-gradient-to-r from-amber-700 to-amber-800';
+      case 'fruits': return 'bg-gradient-to-r from-red-500 to-red-600';
+      case 'spices': return 'bg-gradient-to-r from-orange-500 to-orange-600';
+      case 'pulses': return 'bg-gradient-to-r from-emerald-500 to-emerald-600';
+      case 'vegetables': return 'bg-gradient-to-r from-green-500 to-green-600';
+      case 'millets': return 'bg-gradient-to-r from-yellow-500 to-yellow-600';
+      default: return 'bg-gradient-to-r from-agro-leaf to-green-600';
+    }
   };
 
   return (
@@ -113,7 +134,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 text-sm font-semibold rounded-full">
+        <div className={`absolute bottom-3 right-3 ${getSeasonalityBadgeClass()} text-white px-3 py-1 text-sm font-semibold rounded-full shadow-md`}>
           {getSeasonalityOverlay()}
         </div>
       </div>
@@ -161,19 +182,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
                       <p className="text-gray-700">{getPackagingInfo()}</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-2">
-                    <Bookmark className="h-5 w-5 text-agro-leaf flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium text-sm">Price Range:</p>
-                      <p className="text-gray-700">{product?.price || 'Contact for pricing'}</p>
-                    </div>
-                  </div>
                 </div>
               </div>
               
               <div>
                 <h4 className="font-semibold text-lg mb-2">Export Information</h4>
+                <p className="mb-2 text-gray-700">We export this premium product to various countries worldwide, including:</p>
                 <div className="flex flex-wrap gap-2">
                   {getExportCountries().map((country, index) => (
                     <span key={index} className="px-3 py-1 bg-agro-leaf/10 text-agro-leaf rounded-full text-sm font-medium">
@@ -183,64 +197,73 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </div>
               </div>
               
-              <div>
-                <h4 className="font-semibold text-lg mb-3">Inquire About This Product</h4>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Your Phone Number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      placeholder="Your Message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20 resize-none"
-                      required
-                    />
-                  </div>
-                  <DialogFooter>
+              <DialogFooter>
+                <button 
+                  onClick={() => setIsOpen(true)} 
+                  className="bg-agro-leaf text-white px-4 py-2 rounded-md hover:bg-agro-leaf/90 transition-colors flex items-center justify-center w-full sm:w-auto"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  Inquire Now
+                </button>
+              </DialogFooter>
+              
+              {isOpen && (
+                <div className="mt-4 border-t pt-4">
+                  <h4 className="font-semibold text-lg mb-3">Inquire About This Product</h4>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Your Phone Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Your Message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20 resize-none"
+                        required
+                      />
+                    </div>
                     <button 
                       type="submit" 
-                      className="bg-agro-leaf text-white px-4 py-2 rounded-md hover:bg-agro-leaf/90 transition-colors flex items-center justify-center w-full sm:w-auto"
+                      className="bg-agro-leaf text-white px-4 py-2 rounded-md hover:bg-agro-leaf/90 transition-colors flex items-center justify-center w-full"
                     >
-                      <Phone className="mr-2 h-4 w-4" />
-                      Inquire Now
+                      Submit Inquiry
                     </button>
-                  </DialogFooter>
-                </form>
-              </div>
+                  </form>
+                </div>
+              )}
             </div>
           </DialogContent>
         </Dialog>
