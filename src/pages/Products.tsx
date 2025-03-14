@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
@@ -518,7 +517,7 @@ const mangoProducts = [
   {
     id: 'm3',
     name: 'Banganapalli Mango',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'Known as the "King of Mangoes" in South India, featuring a fibreless pulp.',
     price: '$30-$45 per box',
     origin: 'Andhra Pradesh',
@@ -528,7 +527,7 @@ const mangoProducts = [
   {
     id: 'm7',
     name: 'Cheruku Rasalu Mango',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'A premium variety known for its exceptional sweetness and unique flavor profile.',
     price: '$40-$55 per box',
     origin: 'Andhra Pradesh',
@@ -538,7 +537,7 @@ const mangoProducts = [
   {
     id: 'm8',
     name: 'Suvernarekha Mango',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
     description: 'A premium variety with golden-yellow skin, sweet aromatic flesh and low fiber content.',
     price: '$38-$52 per box',
     origin: 'Andhra Pradesh',
@@ -551,7 +550,7 @@ const fruitProducts = [
   {
     id: 'f1',
     name: 'Pomegranate',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Ruby-red arils with the perfect balance of sweetness and tartness.',
     price: '$25-$35 per box',
     origin: 'Maharashtra, Gujarat',
@@ -561,7 +560,7 @@ const fruitProducts = [
   {
     id: 'f2',
     name: 'Litchi',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Fragrant, juicy fruits with translucent white flesh and sweet flavor.',
     price: '$30-$42 per box',
     origin: 'Bihar, West Bengal',
@@ -571,7 +570,7 @@ const fruitProducts = [
   {
     id: 'f3',
     name: 'Guava',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Aromatic, tropical fruit with edible seeds and high vitamin C content.',
     price: '$18-$28 per box',
     origin: 'Various regions',
@@ -581,7 +580,7 @@ const fruitProducts = [
   {
     id: 'f4',
     name: 'Sapota (Chikoo)',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Sweet, malty-flavored fruits with a grainy texture.',
     price: '$20-$30 per box',
     origin: 'Karnataka, Maharashtra',
@@ -601,7 +600,7 @@ const fruitProducts = [
   {
     id: 'f6',
     name: 'Papaya',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Sweet, butter-soft flesh with a tropical flavor profile.',
     price: '$15-$25 per box',
     origin: 'Various regions',
@@ -624,7 +623,7 @@ const riceProducts = [
   {
     id: 'r2',
     name: 'Sona Masoori Rice',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Medium-grain rice with light, fluffy texture when cooked.',
     price: '$12-$20 per kg',
     origin: 'Andhra Pradesh, Telangana',
@@ -634,7 +633,7 @@ const riceProducts = [
   {
     id: 'r3',
     name: 'Brown Basmati Rice',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Whole grain basmati with nutty flavor and added nutritional benefits.',
     price: '$20-$32 per kg',
     origin: 'Punjab, Haryana',
@@ -644,7 +643,7 @@ const riceProducts = [
   {
     id: 'r4',
     name: 'Ponni Rice',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Popular South Indian variety with excellent cooking qualities.',
     price: '$10-$18 per kg',
     origin: 'Tamil Nadu',
@@ -664,7 +663,7 @@ const riceProducts = [
   {
     id: 'r6',
     name: 'Red Rice',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Whole grain rice with reddish bran layer and high nutritional value.',
     price: '$15-$25 per kg',
     origin: 'Kerala, Karnataka',
@@ -677,7 +676,7 @@ const pulseProducts = [
   {
     id: 'p1',
     name: 'Yellow Moong Dal',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Split yellow lentils, easy to digest with mild, sweet flavor.',
     price: '$8-$15 per kg',
     origin: 'Madhya Pradesh, Maharashtra',
@@ -697,7 +696,7 @@ const pulseProducts = [
   {
     id: 'p3',
     name: 'Masoor Dal (Red Lentils)',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Orange-red split lentils that cook quickly with a mild, earthy flavor.',
     price: '$9-$16 per kg',
     origin: 'Uttar Pradesh, Madhya Pradesh',
@@ -707,7 +706,7 @@ const pulseProducts = [
   {
     id: 'p4',
     name: 'Chana Dal (Bengal Gram)',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Split chickpeas with a nutty flavor, high in protein and fiber.',
     price: '$8-$14 per kg',
     origin: 'Maharashtra, Rajasthan',
@@ -717,7 +716,7 @@ const pulseProducts = [
   {
     id: 'p5',
     name: 'Green Gram (Whole Moong)',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Whole green lentils with high nutritional value, used in various dishes.',
     price: '$9-$16 per kg',
     origin: 'Madhya Pradesh, Rajasthan',
@@ -730,7 +729,7 @@ const vegetableProducts = [
   {
     id: 'v1',
     name: 'Tomato',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Fresh, vine-ripened tomatoes with balanced sweetness and acidity.',
     price: '$12-$20 per box',
     origin: 'Various regions in India',
@@ -740,7 +739,7 @@ const vegetableProducts = [
   {
     id: 'v2',
     name: 'Brinjal (Eggplant)',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Multiple varieties with different sizes, shapes, and colors.',
     price: '$15-$22 per box',
     origin: 'Maharashtra, Karnataka',
@@ -750,7 +749,7 @@ const vegetableProducts = [
   {
     id: 'v3',
     name: 'Okra (Lady Finger)',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Young, tender pods with excellent texture and flavor profile.',
     price: '$18-$25 per box',
     origin: 'Gujarat, Andhra Pradesh',
@@ -770,7 +769,7 @@ const vegetableProducts = [
   {
     id: 'v5',
     name: 'Green Chilli',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Flavorful chillies with varying heat levels for different culinary uses.',
     price: '$15-$22 per box',
     origin: 'Andhra Pradesh, Karnataka',
@@ -780,7 +779,7 @@ const vegetableProducts = [
   {
     id: 'v6',
     name: 'Curry Leaves',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Aromatic leaves essential for authentic South Indian cuisine.',
     price: '$20-$30 per box',
     origin: 'Tamil Nadu, Kerala',
@@ -790,7 +789,7 @@ const vegetableProducts = [
   {
     id: 'v7',
     name: 'Drumstick',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
     description: 'Nutrient-rich pods used in curries and traditional recipes.',
     price: '$16-$24 per box',
     origin: 'South India',
@@ -823,7 +822,7 @@ const spiceProducts = [
   {
     id: 's2',
     name: 'Cardamom',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Aromatic green pods with sweet, floral notes used in both sweet and savory dishes.',
     price: '$30-$50 per kg',
     origin: 'Kerala, Karnataka',
@@ -833,7 +832,7 @@ const spiceProducts = [
   {
     id: 's3',
     name: 'Black Pepper',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Known as "Black Gold," featuring strong, pungent flavor from volatile oils.',
     price: '$15-$35 per kg',
     origin: 'Kerala',
@@ -843,7 +842,7 @@ const spiceProducts = [
   {
     id: 's4',
     name: 'Cumin Seeds',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Aromatic seeds with distinctive flavor, essential for many cuisines.',
     price: '$10-$20 per kg',
     origin: 'Gujarat, Rajasthan',
@@ -863,7 +862,7 @@ const spiceProducts = [
   {
     id: 's6',
     name: 'Cinnamon',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
     description: 'Sweet, aromatic bark with warming properties, used in diverse cuisines.',
     price: '$15-$30 per kg',
     origin: 'Kerala, Tamil Nadu',
@@ -876,7 +875,7 @@ const milletProducts = [
   {
     id: 'mi1',
     name: 'Pearl Millet (Bajra)',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Gluten-free grain with nutty flavor, high in protein and minerals.',
     price: '$5-$12 per kg',
     origin: 'Rajasthan, Gujarat',
@@ -886,7 +885,7 @@ const milletProducts = [
   {
     id: 'mi2',
     name: 'Finger Millet (Ragi)',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Nutrient-dense grain rich in calcium, ideal for diabetics.',
     price: '$6-$14 per kg',
     origin: 'Karnataka, Tamil Nadu',
@@ -896,7 +895,7 @@ const milletProducts = [
   {
     id: 'mi3',
     name: 'Foxtail Millet (Kakum)',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Small, yellow grains with light, nutty flavor and excellent digestibility.',
     price: '$7-$15 per kg',
     origin: 'Andhra Pradesh, Karnataka',
@@ -916,7 +915,7 @@ const milletProducts = [
   {
     id: 'mi5',
     name: 'Barnyard Millet (Sanwa)',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'High-fiber millet with low glycemic index and excellent cooking qualities.',
     price: '$8-$16 per kg',
     origin: 'Uttarakhand, Himachal Pradesh',
@@ -926,7 +925,7 @@ const milletProducts = [
   {
     id: 'mi6',
     name: 'Kodo Millet',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Ancient grain with excellent digestibility and high antioxidant content.',
     price: '$6-$14 per kg',
     origin: 'Madhya Pradesh, Tamil Nadu',
@@ -936,7 +935,7 @@ const milletProducts = [
   {
     id: 'mi7',
     name: 'Proso Millet (Chena)',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
     description: 'Fast-cooking millet with mild flavor, suitable for diverse recipes.',
     price: '$7-$15 per kg',
     origin: 'Maharashtra, Karnataka',

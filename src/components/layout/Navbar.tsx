@@ -1,18 +1,24 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown, Leaf, MapPin, Mail, Phone } from 'lucide-react';
+import { useMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
+  const location = useLocation();
+  const isMobile = useMobile();
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
+      if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -20,139 +26,145 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'py-3 bg-white/90 backdrop-blur-md shadow-sm' 
-          : 'py-5 bg-transparent'
+        scrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-3'
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+          <Link to="/" className="flex items-center relative z-50">
             <div className="flex items-center">
-              <div className="relative mr-3 h-12 w-12 bg-gradient-to-br from-agro-leaf via-green-600 to-agro-mango rounded-lg overflow-hidden flex items-center justify-center shadow-md">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white">
-                  <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5Z" fill="#FFFFFF" fillOpacity="0.9"/>
-                  <path d="M20 8C16 8 12 11 12 16C12 21 16 28 20 28C24 28 28 21 28 16C28 11 24 8 20 8Z" fill="#52A447" fillOpacity="0.9"/>
-                  <path d="M20 16C18 16 16 18 16 20C16 22 18 24 20 24C22 24 24 22 24 20C24 18 22 16 20 16Z" fill="#FFA62B" fillOpacity="0.9"/>
-                  <path d="M7 18L12 12M12 12V17M12 12H7" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M33 18L28 12M28 12V17M28 12H33" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M20 32L14 27M14 27H19M14 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M20 32L26 27M26 27H21M26 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
+              <div className="mr-2 text-agro-leaf">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="20" fill="#4D7C0F" />
+                  <path d="M20 5C13.925 5 9 9.925 9 16C9 22.075 13.925 27 20 27C26.075 27 31 22.075 31 16C31 9.925 26.075 5 20 5ZM20 7C25.159 7 28.945 10.841 28.945 16C28.945 21.159 25.159 25 20 25C14.841 25 11 21.159 11 16C11 10.841 14.841 7 20 7Z" fill="#FFFFFF"/>
+                  <path d="M14 30C14 32.761 16.239 35 19 35H21C23.761 35 26 32.761 26 30V27H14V30Z" fill="#FFFFFF"/>
+                  <path d="M20 12C18.895 12 18 12.895 18 14C18 15.105 18.895 16 20 16C21.105 16 22 15.105 22 14C22 12.895 21.105 12 20 12Z" fill="#FFFFFF"/>
+                  <path d="M15 17C14.448 17 14 17.448 14 18C14 18.552 14.448 19 15 19C15.552 19 16 18.552 16 18C16 17.448 15.552 17 15 17Z" fill="#FFFFFF"/>
+                  <path d="M25 17C24.448 17 24 17.448 24 18C24 18.552 24.448 19 25 19C25.552 19 26 18.552 26 18C26 17.448 25.552 17 25 17Z" fill="#FFFFFF"/>
+                  <path d="M15 23C15.552 23 16 22.552 16 22C16 21.448 15.552 21 15 21C14.448 21 14 21.448 14 22C14 22.552 14.448 23 15 23Z" fill="#FFFFFF"/>
+                  <path d="M25 23C25.552 23 26 22.552 26 22C26 21.448 25.552 21 25 21C24.448 21 24 21.448 24 22C24 22.552 24.448 23 25 23Z" fill="#FFFFFF"/>
                 </svg>
-                <div className="absolute inset-0 bg-gradient-to-br from-agro-leaf/20 via-green-600/20 to-agro-mango/20 rounded-lg"></div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-agro-leaf tracking-wider relative">
-                  ARGO<span className="text-agro-mango">VITAL</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-agro-leaf to-agro-mango"></span>
-                </span>
-                <span className="text-xs tracking-widest text-gray-600">PREMIUM EXPORTS</span>
+              <div>
+                <span className="font-bold text-2xl tracking-tight bg-gradient-to-r from-agro-leaf to-agro-mango bg-clip-text text-transparent">ARGO<span className="text-agro-leaf font-extrabold">VITAL</span></span>
+                <div className="text-xs text-gray-500 font-medium -mt-1">Premium Agricultural Exports</div>
               </div>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
-            
-            {/* Products dropdown */}
-            <div className="relative group">
-              <button 
-                className="nav-link flex items-center"
-                onClick={() => setProductsOpen(!productsOpen)}
-                onMouseEnter={() => setProductsOpen(true)}
-                onMouseLeave={() => setProductsOpen(false)}
-              >
-                Products <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div 
-                className={`absolute top-full left-0 w-48 bg-white shadow-md rounded-md overflow-hidden transition-all duration-300 transform origin-top
-                ${productsOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                onMouseEnter={() => setProductsOpen(true)}
-                onMouseLeave={() => setProductsOpen(false)}
-              >
-                <Link to="/products/mangoes" className="block px-4 py-2 hover:bg-secondary transition-colors">Mangoes</Link>
-                <Link to="/products/fruits" className="block px-4 py-2 hover:bg-secondary transition-colors">Fruits</Link>
-                <Link to="/products/rice" className="block px-4 py-2 hover:bg-secondary transition-colors">Rice</Link>
-                <Link to="/products/pulses" className="block px-4 py-2 hover:bg-secondary transition-colors">Pulses</Link>
-                <Link to="/products/grains" className="block px-4 py-2 hover:bg-secondary transition-colors">Grains</Link>
-                <Link to="/products/spices" className="block px-4 py-2 hover:bg-secondary transition-colors">Spices</Link>
-                <Link to="/products/millets" className="block px-4 py-2 hover:bg-secondary transition-colors">Millets</Link>
-              </div>
-            </div>
-            
-            <Link to="/global-reach" className="nav-link">Global Reach</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Desktop Menu */}
+          <nav className={`hidden md:flex items-center space-x-8`}>
+            <NavLink to="/" exact>Home</NavLink>
+            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/products">Products</NavLink>
+            <NavLink to="/global-reach">Global Reach</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
             <Link to="/request-quote" className="cta-button-primary">
-              Request a Quote
+              Get a Quote
             </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
+          </nav>
+          
+          {/* Mobile menu button */}
           <button 
-            className="lg:hidden text-foreground"
+            className="md:hidden relative z-50"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? (
+              <X className="h-6 w-6 text-gray-700" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-700" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        className={`lg:hidden fixed inset-0 z-40 bg-background transition-transform duration-300 transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        style={{ top: '64px' }}
-      >
-        <nav className="flex flex-col p-4 space-y-3">
-          <Link to="/" className="nav-link text-lg" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/about" className="nav-link text-lg" onClick={() => setIsOpen(false)}>About Us</Link>
-          
-          <button 
-            className="flex items-center justify-between w-full py-2 text-left text-lg"
-            onClick={() => setProductsOpen(!productsOpen)}
-          >
-            <span>Products</span>
-            <ChevronDown className={`h-5 w-5 transform transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
-          </button>
-          
-          <div className={`space-y-2 pl-4 ${productsOpen ? 'block' : 'hidden'}`}>
-            <Link to="/products/mangoes" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Mangoes</Link>
-            <Link to="/products/fruits" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Fruits</Link>
-            <Link to="/products/rice" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Rice</Link>
-            <Link to="/products/pulses" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Pulses</Link>
-            <Link to="/products/grains" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Grains</Link>
-            <Link to="/products/spices" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Spices</Link>
-            <Link to="/products/millets" className="block py-2 text-foreground/80" onClick={() => setIsOpen(false)}>Millets</Link>
-          </div>
-          
-          <Link to="/global-reach" className="nav-link text-lg" onClick={() => setIsOpen(false)}>Global Reach</Link>
-          <Link to="/contact" className="nav-link text-lg" onClick={() => setIsOpen(false)}>Contact</Link>
-          
-          <div className="pt-4">
-            <Link to="/request-quote" className="cta-button-primary block text-center" onClick={() => setIsOpen(false)}>
-              Request a Quote
+      {isOpen && (
+        <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-white pt-20 px-6 z-40">
+          <div className="flex flex-col space-y-6 text-center">
+            <MobileNavLink to="/" setIsOpen={setIsOpen}>Home</MobileNavLink>
+            <MobileNavLink to="/about" setIsOpen={setIsOpen}>About Us</MobileNavLink>
+            <MobileNavLink to="/products" setIsOpen={setIsOpen}>Products</MobileNavLink>
+            <MobileNavLink to="/global-reach" setIsOpen={setIsOpen}>Global Reach</MobileNavLink>
+            <MobileNavLink to="/contact" setIsOpen={setIsOpen}>Contact</MobileNavLink>
+            
+            <Link 
+              to="/request-quote" 
+              className="cta-button-primary w-full !mt-8"
+              onClick={() => setIsOpen(false)}
+            >
+              Get a Quote
             </Link>
+
+            {/* Quick Contact Info */}
+            <div className="border-t border-gray-100 pt-6 mt-8">
+              <h3 className="font-medium text-gray-800 mb-4">Quick Contact</h3>
+              <div className="flex flex-col space-y-4">
+                <a href="tel:+919876543210" className="flex items-center justify-center text-gray-600 hover:text-agro-leaf transition-colors">
+                  <Phone className="h-4 w-4 mr-2" />
+                  <span>+91 98765 43210</span>
+                </a>
+                <a href="mailto:info@argovital.com" className="flex items-center justify-center text-gray-600 hover:text-agro-leaf transition-colors">
+                  <Mail className="h-4 w-4 mr-2" />
+                  <span>info@argovital.com</span>
+                </a>
+                <div className="flex items-center justify-center text-gray-600">
+                  <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span>Kavali, Andhra Pradesh, India</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </nav>
-      </div>
+        </div>
+      )}
     </header>
+  );
+};
+
+// Desktop Navigation Link
+const NavLink = ({ to, children, exact }) => {
+  const location = useLocation();
+  const isActive = exact 
+    ? location.pathname === to 
+    : location.pathname.startsWith(to);
+  
+  return (
+    <Link 
+      to={to} 
+      className={`relative px-1 py-2 font-medium text-gray-700 hover:text-agro-leaf transition-colors ${
+        isActive ? 'text-agro-leaf after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-agro-leaf' : ''
+      }`}
+    >
+      {children}
+    </Link>
+  );
+};
+
+// Mobile Navigation Link
+const MobileNavLink = ({ to, children, setIsOpen }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  
+  return (
+    <Link 
+      to={to} 
+      className={`block px-4 py-3 text-lg font-medium rounded-md transition-colors ${
+        isActive 
+          ? 'bg-agro-leaf/10 text-agro-leaf' 
+          : 'text-gray-800 hover:bg-gray-50'
+      }`}
+      onClick={() => setIsOpen(false)}
+    >
+      {children}
+    </Link>
   );
 };
 

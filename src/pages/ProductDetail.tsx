@@ -348,18 +348,24 @@ const ProductCard = ({ product }) => {
       to={product.link}
       className="product-card group"
     >
-      <div className="image-hover-zoom aspect-[4/3]">
+      <div className="image-hover-zoom aspect-[4/3] relative">
         <img 
           src={product.image} 
           alt={product.name} 
           className="w-full h-full object-cover"
         />
+        <div className="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 text-sm font-semibold rounded-full">
+          {product.seasonality.includes('Year-round') ? 'ALL YEAR' : 
+            product.seasonality.split(' to ').join('-').toUpperCase()}
+        </div>
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
         <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
-        <div className="inline-flex items-center text-agro-leaf group-hover:text-agro-mango transition-colors duration-300">
-          Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        <div className="w-full">
+          <button className="w-full py-2 px-4 bg-agro-leaf text-white rounded-md hover:bg-agro-leaf/90 transition-colors flex items-center justify-center">
+            View Details
+          </button>
         </div>
       </div>
     </Link>
