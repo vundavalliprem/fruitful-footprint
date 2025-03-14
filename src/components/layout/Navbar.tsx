@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Leaf } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +37,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-            <span className="text-xl font-bold text-agro-leaf">AGROVITAL</span>
-            <span className="ml-1 text-agro-mango font-bold">EXPORTS</span>
+            <div className="flex items-center">
+              <div className="mr-2 bg-agro-leaf rounded-full p-2 text-white">
+                <Leaf size={20} className="animate-pulse" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-agro-leaf tracking-wider">ARGO<span className="text-agro-mango">VITAL</span></span>
+                <span className="text-xs tracking-widest text-gray-600">EXPORTS</span>
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

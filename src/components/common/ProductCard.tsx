@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Send } from 'lucide-react';
+import { ArrowRight, Send, Phone } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 // Updated interface to either accept individual props or a product object
@@ -40,6 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: `I am interested in ${displayName}. Please send me more information.`
   });
   const { toast } = useToast();
@@ -59,6 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     setFormData({
       name: '',
       email: '',
+      phone: '',
       message: `I am interested in ${displayName}. Please send me more information.`
     });
   };
@@ -109,6 +111,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 />
               </div>
               <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-agro-leaf/20"
+                  required
+                />
+              </div>
+              <div>
                 <textarea
                   name="message"
                   rows={3}
@@ -138,17 +151,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </form>
           </div>
         ) : (
-          <div className="flex justify-between items-center">
-            <Link 
-              to={displayLink} 
-              className="inline-flex items-center text-agro-leaf hover:text-agro-mango transition-colors duration-300"
-            >
-              Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+          <div className="flex justify-center items-center">
             <button
               onClick={handleInquiry}
               className="inline-flex items-center text-agro-mango hover:text-agro-leaf transition-colors duration-300"
             >
+              <Phone className="mr-2 h-4 w-4" />
               Inquire Now <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

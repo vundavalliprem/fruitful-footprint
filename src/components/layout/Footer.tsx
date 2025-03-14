@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Send } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Send, Leaf } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const Footer = () => {
@@ -26,8 +26,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <span className="text-xl font-bold text-agro-leaf">AGROVITAL</span>
-              <span className="ml-1 text-agro-mango font-bold">EXPORTS</span>
+              <div className="mr-2 bg-agro-leaf rounded-full p-2 text-white">
+                <Leaf size={20} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-agro-leaf tracking-wider">ARGO<span className="text-agro-mango">VITAL</span></span>
+                <span className="text-xs tracking-widest text-gray-600">EXPORTS</span>
+              </div>
             </div>
             <p className="text-gray-600">
               Premium exporter of high-quality mangoes and agricultural products from India to the world.
@@ -101,7 +106,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} AGROVITAL EXPORTS PRIVATE LIMITED. All rights reserved.
+              &copy; {new Date().getFullYear()} ARGOVITAL EXPORTS PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <Link to="/privacy-policy" className="text-sm text-gray-500 hover:text-agro-leaf transition-colors">Privacy Policy</Link>

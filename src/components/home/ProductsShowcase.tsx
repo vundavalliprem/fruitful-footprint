@@ -9,10 +9,10 @@ import ScrollReveal from '../common/ScrollReveal';
 const products = [
   {
     id: "1",
-    name: 'Imam Pasand Mangoes',
+    name: 'Premium Mangoes',
     image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
-    description: 'A delicious variety with aromatic flavor and smooth texture, particularly loved for its unique taste.',
-    link: '/products/mangoes/imam-pasand',
+    description: 'Various premium mango varieties including Alphonso, Banganapalli, and other exotic types.',
+    link: '/products/mangoes',
     category: 'mangoes'
   },
   {

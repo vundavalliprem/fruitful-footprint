@@ -9,11 +9,11 @@ const HeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1621517489053-77fadb5c4e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
           alt="Premium agricultural products" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Content */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl text-white/90 mb-8 max-w-lg opacity-0 animate-fadeIn" style={{ animationDelay: '1200ms', animationFillMode: 'forwards' }}>
-            AGROVITAL EXPORTS delivers premium-quality mangoes and agricultural products with commitment to excellence and sustainability.
+            ARGOVITAL EXPORTS delivers premium-quality mangoes and agricultural products with commitment to excellence and sustainability.
           </p>
           
           <div className="flex flex-wrap gap-4 opacity-0 animate-fadeIn" style={{ animationDelay: '1500ms', animationFillMode: 'forwards' }}>

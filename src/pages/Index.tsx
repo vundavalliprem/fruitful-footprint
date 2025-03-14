@@ -11,7 +11,7 @@ import CtaSection from '../components/home/CtaSection';
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "AGROVITAL EXPORTS - Premium Agricultural Products";
+    document.title = "ARGOVITAL EXPORTS - Premium Agricultural Products";
     
     // Force reload of images to fix any caching issues
     const preloadImages = [
