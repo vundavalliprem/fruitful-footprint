@@ -38,19 +38,24 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <div className="flex items-center">
-              <div className="relative mr-3 h-12 w-12 bg-gradient-to-tr from-agro-leaf to-agro-mango rounded-full overflow-hidden flex items-center justify-center shadow-md">
-                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
-                  <path d="M18 4C10.268 4 4 10.268 4 18C4 25.732 10.268 32 18 32C25.732 32 32 25.732 32 18C32 10.268 25.732 4 18 4Z" fill="white"/>
-                  <path d="M18 7C15.5 7 13.5 9 13.5 12C13.5 15 15.5 19 18 19C20.5 19 22.5 15 22.5 12C22.5 9 20.5 7 18 7Z" fill="#52A447"/>
-                  <path d="M18 19C15.5 19 13.5 21 13.5 24C13.5 27 15.5 29 18 29C20.5 29 22.5 27 22.5 24C22.5 21 20.5 19 18 19Z" fill="#52A447"/>
-                  <path d="M7 18C7 15.5 9 13.5 12 13.5C15 13.5 19 15.5 19 18C19 20.5 15 22.5 12 22.5C9 22.5 7 20.5 7 18Z" fill="#FFA62B"/>
-                  <path d="M19 18C19 15.5 21 13.5 24 13.5C27 13.5 29 15.5 29 18C29 20.5 27 22.5 24 22.5C21 22.5 19 20.5 19 18Z" fill="#FFA62B"/>
+              <div className="relative mr-3 h-12 w-12 bg-gradient-to-br from-agro-leaf via-green-600 to-agro-mango rounded-lg overflow-hidden flex items-center justify-center shadow-md">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white">
+                  <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5Z" fill="#FFFFFF" fillOpacity="0.9"/>
+                  <path d="M20 8C16 8 12 11 12 16C12 21 16 28 20 28C24 28 28 21 28 16C28 11 24 8 20 8Z" fill="#52A447" fillOpacity="0.9"/>
+                  <path d="M20 16C18 16 16 18 16 20C16 22 18 24 20 24C22 24 24 22 24 20C24 18 22 16 20 16Z" fill="#FFA62B" fillOpacity="0.9"/>
+                  <path d="M7 18L12 12M12 12V17M12 12H7" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M33 18L28 12M28 12V17M28 12H33" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M20 32L14 27M14 27H19M14 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M20 32L26 27M26 27H21M26 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
-                <div className="absolute inset-0 bg-gradient-to-tr from-agro-leaf/40 to-agro-mango/40 rounded-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-agro-leaf/20 via-green-600/20 to-agro-mango/20 rounded-lg"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-agro-leaf tracking-wider">ARGO<span className="text-agro-mango">VITAL</span></span>
-                <span className="text-xs tracking-widest text-gray-600">EXPORTS</span>
+                <span className="text-xl font-bold text-agro-leaf tracking-wider relative">
+                  ARGO<span className="text-agro-mango">VITAL</span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-agro-leaf to-agro-mango"></span>
+                </span>
+                <span className="text-xs tracking-widest text-gray-600">PREMIUM EXPORTS</span>
               </div>
             </div>
           </Link>

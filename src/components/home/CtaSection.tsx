@@ -29,7 +29,7 @@ const CtaSection = () => {
             
             <ScrollReveal delay={200}>
               <p className="text-white/90 text-lg max-w-3xl mx-auto mb-8">
-                Contact ARGOVITAL EXPORTS today to discuss your requirements and discover how our premium-quality products can add value to your business.
+                Contact ARGOVITAL today to discuss your requirements and discover how our premium-quality products can add value to your business.
               </p>
             </ScrollReveal>
             

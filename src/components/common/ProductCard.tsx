@@ -157,7 +157,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               className="inline-flex items-center text-agro-mango hover:text-agro-leaf transition-colors duration-300"
             >
               <Phone className="mr-2 h-4 w-4" />
-              Inquire Now <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Inquire Now
             </button>
           </div>
         )}

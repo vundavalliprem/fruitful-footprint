@@ -1,4 +1,5 @@
 
+// Need to ensure there's only ONE footer component in the Layout
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';

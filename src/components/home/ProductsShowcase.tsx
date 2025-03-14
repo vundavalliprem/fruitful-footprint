@@ -10,7 +10,7 @@ const products = [
   {
     id: "1",
     name: 'Premium Mangoes',
-    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png',
+    image: '/lovable-uploads/5c1f5c63-6ebd-455f-a899-917b7cb493d2.png', // Mango image
     description: 'Various premium mango varieties including Alphonso, Banganapalli, and other exotic types.',
     link: '/products/mangoes',
     category: 'mangoes'
@@ -18,7 +18,7 @@ const products = [
   {
     id: "2",
     name: 'Premium Rice Varieties',
-    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png',
+    image: '/lovable-uploads/9551071f-00bb-4033-95be-337ff8c8b87c.png', // Rice image
     description: 'Aromatic basmati and other specialty varieties known for their premium quality and authentic taste.',
     link: '/products/rice',
     category: 'rice'
@@ -26,7 +26,7 @@ const products = [
   {
     id: "3",
     name: 'Exotic Fruits Collection',
-    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png',
+    image: '/lovable-uploads/a509a10f-b6bf-4d99-a1c5-ecda3e2a22c3.png', // Fruits image
     description: 'Fresh and exotic fruits sourced from the finest orchards across the country.',
     link: '/products/fruits',
     category: 'fruits'
@@ -34,7 +34,7 @@ const products = [
   {
     id: "4",
     name: 'Organic Spices',
-    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png',
+    image: '/lovable-uploads/426a1a22-9041-4d08-8c0e-5e881b9011fe.png', // Spices image
     description: 'Aromatic spices carefully processed to preserve their essential oils and flavor profiles.',
     link: '/products/spices',
     category: 'spices'
