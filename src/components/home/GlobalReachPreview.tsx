@@ -7,11 +7,12 @@ import ScrollReveal from '../common/ScrollReveal';
 
 const GlobalReachPreview = () => {
   const mapRef = useRef<HTMLIFrameElement>(null);
+  const kavaliMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61543.04887023106!2d79.95960559581906!3d14.915053828955893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a9aebf41d4a1d%3A0x4f17d672412d4e3b!2sKavali%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1673425387631!5m2!1sen!2sin";
 
   useEffect(() => {
     // Update the map's src to Kavali, Andhra Pradesh location
     if (mapRef.current) {
-      mapRef.current.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61543.04887023106!2d79.95960559581906!3d14.915053828955893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a9aebf41d4a1d%3A0x4f17d672412d4e3b!2sKavali%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1673425387631!5m2!1sen!2sin";
+      mapRef.current.src = kavaliMapUrl;
     }
   }, []);
 
@@ -70,7 +71,7 @@ const GlobalReachPreview = () => {
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61543.04887023106!2d79.95960559581906!3d14.915053828955893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a9aebf41d4a1d%3A0x4f17d672412d4e3b!2sKavali%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1673425387631!5m2!1sen!2sin"
+                src={kavaliMapUrl}
                 title="ARGOVITAL global presence map"
               ></iframe>
               <div className="absolute inset-0 pointer-events-none border border-white rounded-xl"></div>
@@ -81,5 +82,8 @@ const GlobalReachPreview = () => {
     </section>
   );
 };
+
+// Export the Kavali map URL for reuse in other components
+export const kavaliMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61543.04887023106!2d79.95960559581906!3d14.915053828955893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a9aebf41d4a1d%3A0x4f17d672412d4e3b!2sKavali%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1673425387631!5m2!1sen!2sin";
 
 export default GlobalReachPreview;

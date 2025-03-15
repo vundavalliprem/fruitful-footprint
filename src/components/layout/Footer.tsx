@@ -28,13 +28,15 @@ const Footer = () => {
             <div className="flex items-center">
               <div className="relative mr-3 h-10 w-10 bg-gradient-to-br from-agro-leaf via-green-600 to-agro-mango rounded-lg overflow-hidden flex items-center justify-center shadow-md">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
+                  <defs>
+                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4D7C0F" />
+                      <stop offset="100%" stopColor="#65a30d" />
+                    </linearGradient>
+                  </defs>
                   <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5Z" fill="#FFFFFF" fillOpacity="0.9"/>
-                  <path d="M20 8C16 8 12 11 12 16C12 21 16 28 20 28C24 28 28 21 28 16C28 11 24 8 20 8Z" fill="#52A447" fillOpacity="0.9"/>
+                  <path d="M20 8C16 8 12 11 12 16C12 21 16 28 20 28C24 28 28 21 28 16C28 11 24 8 20 8Z" fill="url(#footerLogoGradient)" fillOpacity="0.9"/>
                   <path d="M20 16C18 16 16 18 16 20C16 22 18 24 20 24C22 24 24 22 24 20C24 18 22 16 20 16Z" fill="#FFA62B" fillOpacity="0.9"/>
-                  <path d="M7 18L12 12M12 12V17M12 12H7" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M33 18L28 12M28 12V17M28 12H33" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M20 32L14 27M14 27H19M14 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M20 32L26 27M26 27H21M26 27V32" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-br from-agro-leaf/20 via-green-600/20 to-agro-mango/20 rounded-lg"></div>
               </div>
@@ -119,7 +121,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               <Link to="/privacy-policy" className="text-sm text-gray-500 hover:text-agro-leaf transition-colors">Privacy Policy</Link>
-              <Link to="/privacy-policy" className="text-sm text-gray-500 hover:text-agro-leaf transition-colors">Terms of Service</Link>
+              <Link to="/terms-of-service" className="text-sm text-gray-500 hover:text-agro-leaf transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

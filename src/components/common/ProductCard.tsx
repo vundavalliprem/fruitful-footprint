@@ -60,6 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       phone: '',
       message: `I am interested in ${displayName}. Please send me more information.`
     });
+    setIsOpen(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,14 +101,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
   // Format the seasonality as overlay text with more stylish variants
   const getSeasonalityOverlay = () => {
     if (seasonality.toLowerCase().includes('year-round')) {
-      return 'AVAILABLE ALL YEAR';
+      return 'AVAILABLE';
     }
     
     if (seasonality.toLowerCase().includes('varies')) {
-      return 'SEASONAL HARVEST';
+      return 'SEASONAL';
     }
     
-    return seasonality.split(' to ').join('-').toUpperCase();
+    return seasonality.split(' to ')[0].toUpperCase();
   };
 
   // Get seasonality badge color based on product type
@@ -134,7 +135,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className={`absolute bottom-3 right-3 ${getSeasonalityBadgeClass()} text-white px-3 py-1 text-sm font-semibold rounded-full shadow-md`}>
+        <div className={`absolute bottom-3 right-3 ${getSeasonalityBadgeClass()} text-white px-2 py-0.5 text-xs font-medium rounded-full shadow-md opacity-90`}>
           {getSeasonalityOverlay()}
         </div>
       </div>
@@ -148,7 +149,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               View Details
             </button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[500px]">
+          <DialogContent className="sm:max-w-[500px] h-[80vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold">{displayName}</DialogTitle>
             </DialogHeader>

@@ -37,19 +37,28 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Improved Logo */}
           <Link to="/" className="flex items-center relative z-50">
             <div className="flex items-center">
               <div className="mr-2 text-agro-leaf">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="20" cy="20" r="20" fill="#4D7C0F" />
-                  <path d="M20 5C13.925 5 9 9.925 9 16C9 22.075 13.925 27 20 27C26.075 27 31 22.075 31 16C31 9.925 26.075 5 20 5ZM20 7C25.159 7 28.945 10.841 28.945 16C28.945 21.159 25.159 25 20 25C14.841 25 11 21.159 11 16C11 10.841 14.841 7 20 7Z" fill="#FFFFFF"/>
-                  <path d="M14 30C14 32.761 16.239 35 19 35H21C23.761 35 26 32.761 26 30V27H14V30Z" fill="#FFFFFF"/>
-                  <path d="M20 12C18.895 12 18 12.895 18 14C18 15.105 18.895 16 20 16C21.105 16 22 15.105 22 14C22 12.895 21.105 12 20 12Z" fill="#FFFFFF"/>
-                  <path d="M15 17C14.448 17 14 17.448 14 18C14 18.552 14.448 19 15 19C15.552 19 16 18.552 16 18C16 17.448 15.552 17 15 17Z" fill="#FFFFFF"/>
-                  <path d="M25 17C24.448 17 24 17.448 24 18C24 18.552 24.448 19 25 19C25.552 19 26 18.552 26 18C26 17.448 25.552 17 25 17Z" fill="#FFFFFF"/>
-                  <path d="M15 23C15.552 23 16 22.552 16 22C16 21.448 15.552 21 15 21C14.448 21 14 21.448 14 22C14 22.552 14.448 23 15 23Z" fill="#FFFFFF"/>
-                  <path d="M25 23C25.552 23 26 22.552 26 22C26 21.448 25.552 21 25 21C24.448 21 24 21.448 24 22C24 22.552 24.448 23 25 23Z" fill="#FFFFFF"/>
+                  <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4D7C0F" />
+                      <stop offset="100%" stopColor="#65a30d" />
+                    </linearGradient>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+                  <circle cx="20" cy="20" r="20" fill="url(#logoGradient)" />
+                  <g filter="url(#glow)">
+                    <path d="M20 8C14 8 10 12 10 18C10 24 14 28 20 28C26 28 30 24 30 18C30 12 26 8 20 8Z" fill="#FFFFFF" fillOpacity="0.9"/>
+                    <path d="M20 12C17 12 15 14 15 17C15 21 17 24 20 24C23 24 25 21 25 17C25 14 23 12 20 12Z" fill="#65a30d" fillOpacity="0.9"/>
+                    <path d="M20 15C19 15 18 16 18 17C18 18 19 19 20 19C21 19 22 18 22 17C22 16 21 15 20 15Z" fill="#FFA62B" fillOpacity="0.9"/>
+                    <path d="M14 30C14 32.761 16.239 35 19 35H21C23.761 35 26 32.761 26 30V27H14V30Z" fill="#FFFFFF" fillOpacity="0.7"/>
+                  </g>
                 </svg>
               </div>
               <div>
@@ -130,7 +139,7 @@ const Navbar = () => {
 };
 
 // Desktop Navigation Link
-const NavLink = ({ to, children, exact }) => {
+const NavLink = ({ to, children, exact }: { to: string; children: React.ReactNode; exact: boolean }) => {
   const location = useLocation();
   const isActive = exact 
     ? location.pathname === to 
@@ -149,7 +158,7 @@ const NavLink = ({ to, children, exact }) => {
 };
 
 // Mobile Navigation Link
-const MobileNavLink = ({ to, children, setIsOpen }) => {
+const MobileNavLink = ({ to, children, setIsOpen }: { to: string; children: React.ReactNode; setIsOpen: (isOpen: boolean) => void }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
   
