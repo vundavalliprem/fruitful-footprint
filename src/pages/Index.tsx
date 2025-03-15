@@ -32,9 +32,9 @@ const Index = () => {
       <HeroSection />
       <AboutPreview />
       <ProductsShowcase />
+      <GlobalReachPreview />
       <TestimonialsSection />
       <CtaSection />
-      <GlobalReachPreview />
     </Layout>
   );
 };

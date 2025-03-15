@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-grow pt-20">
         {children}
       </main>
-      {/* Footer is now only rendered here, not in individual page components */}
+      <Footer />
     </div>
   );
 };

@@ -1,8 +1,10 @@
+
 import React, { useEffect } from 'react';
 import { Globe, MapPin, Ship, Plane, Leaf, Package } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/common/ScrollReveal';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../components/ui/carousel";
 
 const GlobalReach = () => {
   useEffect(() => {
@@ -187,25 +189,37 @@ const GlobalReach = () => {
             />
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {caseStudies.map((study, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={study.image} 
-                      alt={study.title} 
-                      className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">{study.title}</h3>
-                    <p className="text-gray-600">{study.description}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-5xl mx-auto mt-12"
+          >
+            <CarouselContent>
+              {caseStudies.map((study, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <ScrollReveal delay={index * 100}>
+                    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
+                      <div className="h-48 overflow-hidden">
+                        <img 
+                          src={study.image} 
+                          alt={study.title} 
+                          className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-3">{study.title}</h3>
+                        <p className="text-gray-600">{study.description}</p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 lg:-left-12" />
+            <CarouselNext className="right-0 lg:-right-12" />
+          </Carousel>
         </div>
       </section>
     </Layout>
