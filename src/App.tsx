@@ -1,11 +1,9 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import Footer from "./components/layout/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
@@ -24,79 +22,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
-            <>
-              <Layout>
-                <Index />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/about" element={
-            <>
-              <Layout>
-                <About />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/products" element={
-            <>
-              <Layout>
-                <Products />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/products/:category" element={
-            <>
-              <Layout>
-                <Products />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/products/:category/:id" element={
-            <>
-              <Layout>
-                <ProductDetail />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/global-reach" element={
-            <>
-              <Layout>
-                <GlobalReach />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/contact" element={
-            <>
-              <Layout>
-                <Contact />
-              </Layout>
-              <Footer />
-            </>
-          } />
-          <Route path="/request-quote" element={
-            <>
-              <Layout>
-                <RequestQuote />
-              </Layout>
-              <Footer />
-            </>
-          } />
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:category" element={<Products />} />
+          <Route path="/products/:category/:id" element={<ProductDetail />} />
+          <Route path="/global-reach" element={<GlobalReach />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/request-quote" element={<RequestQuote />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={
-            <>
-              <Layout>
-                <NotFound />
-              </Layout>
-              <Footer />
-            </>
-          } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
