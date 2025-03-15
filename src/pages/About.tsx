@@ -4,12 +4,42 @@ import Layout from '../components/layout/Layout';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/common/ScrollReveal';
 import { Shield, Award, Globe, Leaf, Sprout, Users } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import Footer from '../components/layout/Footer';
 
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "About Us - AGROVITAL EXPORTS";
   }, []);
+
+  // Team members data
+  const teamMembers = [
+    {
+      name: "Rajesh Kumar",
+      role: "Founder & CEO",
+      bio: "With over 15 years in agricultural exports, Rajesh has built AGROVITAL from the ground up.",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Priya Sharma",
+      role: "Head of Operations",
+      bio: "Priya ensures that every shipment meets our stringent quality standards before export.",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Vikram Singh",
+      role: "International Relations",
+      bio: "Vikram manages our global partnerships and ensures regulatory compliance in all markets.",
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Ananya Patel",
+      role: "Farmer Network Manager",
+      bio: "Ananya works directly with our network of farmers to implement sustainable farming practices.",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    }
+  ];
 
   return (
     <Layout>
@@ -187,8 +217,45 @@ const About = () => {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Team Section - Enhanced with modern card design */}
       <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <ScrollReveal animation="fadeIn">
+            <SectionHeading
+              title="Meet Our Team"
+              subtitle="The passionate experts behind AGROVITAL's success"
+              center={true}
+            />
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {teamMembers.map((member, index) => (
+              <ScrollReveal key={member.name} animation="zoomIn" delay={100 * index}>
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative overflow-hidden h-56">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h3 className="font-bold text-xl">{member.name}</h3>
+                      <p className="text-white/80 font-medium">{member.role}</p>
+                    </div>
+                  </div>
+                  <CardContent className="p-5">
+                    <p className="text-gray-600">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications - Enhanced with modern interactive design */}
+      <section className="py-16">
         <div className="container-custom">
           <ScrollReveal animation="fadeIn">
             <SectionHeading
@@ -198,43 +265,84 @@ const About = () => {
             />
           </ScrollReveal>
           
-          <div className="flex flex-wrap justify-center gap-8 mt-12">
-            <ScrollReveal animation="zoomIn" delay={100}>
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center text-center w-[280px]">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/USDA_organic_seal.svg/240px-USDA_organic_seal.svg.png" alt="USDA Organic" className="h-24 w-auto mb-4" />
-                <h3 className="text-lg font-bold mb-1">USDA Organic</h3>
-                <p className="text-gray-600 text-sm">Certified organic products meeting USDA standards</p>
+          <div className="mt-12">
+            <div className="bg-gray-50 rounded-xl p-6 mb-8">
+              <div className="flex flex-wrap gap-4 justify-center">
+                <button className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 text-gray-700 font-medium">
+                  <span className="text-agro-leaf mr-2">•</span> All Certifications
+                </button>
+                <button className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 text-gray-700 font-medium">
+                  <span className="text-agro-leaf mr-2">•</span> Quality Standards
+                </button>
+                <button className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 text-gray-700 font-medium">
+                  <span className="text-agro-leaf mr-2">•</span> Organic
+                </button>
+                <button className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 text-gray-700 font-medium">
+                  <span className="text-agro-leaf mr-2">•</span> Fair Trade
+                </button>
               </div>
-            </ScrollReveal>
-            
-            <ScrollReveal animation="zoomIn" delay={200}>
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center text-center w-[280px]">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Fairtrade_Certification_Mark.svg/240px-Fairtrade_Certification_Mark.svg.png" alt="Fair Trade Certified" className="h-24 w-auto mb-4" />
-                <h3 className="text-lg font-bold mb-1">Fair Trade Certified</h3>
-                <p className="text-gray-600 text-sm">Committed to fair wages and sustainable farming</p>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal animation="zoomIn" delay={300}>
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center text-center w-[280px]">
-                <img src="https://www.tuv.com/content-media-files/master-content/services/product-testing-and-certification/0-tuv-rheinland-certification-marks/global-g-a-p/tuev-rheinland-global-g-a-p-logo.png" alt="GlobalG.A.P Certified" className="h-24 w-auto mb-4" />
-                <h3 className="text-lg font-bold mb-1">GlobalG.A.P Certified</h3>
-                <p className="text-gray-600 text-sm">Good Agricultural Practices certification</p>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal animation="zoomIn" delay={400}>
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center text-center w-[280px]">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/FSSAI_logo.svg/240px-FSSAI_logo.svg.png" alt="FSSAI Certified" className="h-24 w-auto mb-4" />
-                <h3 className="text-lg font-bold mb-1">FSSAI Certified</h3>
-                <p className="text-gray-600 text-sm">Food Safety and Standards Authority of India</p>
-              </div>
-            </ScrollReveal>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <ScrollReveal animation="zoomIn" delay={100}>
+                <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div className="relative mb-4 w-24 h-24 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-green-100 rounded-full animate-pulse opacity-50"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/USDA_organic_seal.svg/240px-USDA_organic_seal.svg.png" alt="USDA Organic" className="h-20 w-auto relative z-10" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-800">USDA Organic</h3>
+                  <p className="text-gray-600">Our products meet the stringent USDA organic standards, ensuring no harmful chemicals.</p>
+                  <span className="mt-4 text-xs px-3 py-1 bg-green-100 text-green-800 rounded-full font-medium">
+                    Verified & Current
+                  </span>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal animation="zoomIn" delay={200}>
+                <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div className="relative mb-4 w-24 h-24 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-blue-100 rounded-full animate-pulse opacity-50"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Fairtrade_Certification_Mark.svg/240px-Fairtrade_Certification_Mark.svg.png" alt="Fair Trade Certified" className="h-20 w-auto relative z-10" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-800">Fair Trade Certified</h3>
+                  <p className="text-gray-600">We ensure fair wages and sustainable farming practices with our partner farmers.</p>
+                  <span className="mt-4 text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-medium">
+                    Verified & Current
+                  </span>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal animation="zoomIn" delay={300}>
+                <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div className="relative mb-4 w-24 h-24 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-yellow-100 rounded-full animate-pulse opacity-50"></div>
+                    <img src="https://www.tuv.com/content-media-files/master-content/services/product-testing-and-certification/0-tuv-rheinland-certification-marks/global-g-a-p/tuev-rheinland-global-g-a-p-logo.png" alt="GlobalG.A.P Certified" className="h-20 w-auto relative z-10" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-800">GlobalG.A.P Certified</h3>
+                  <p className="text-gray-600">Our farms follow Good Agricultural Practices for safe and sustainable production.</p>
+                  <span className="mt-4 text-xs px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-medium">
+                    Verified & Current
+                  </span>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal animation="zoomIn" delay={400}>
+                <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div className="relative mb-4 w-24 h-24 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse opacity-50"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/FSSAI_logo.svg/240px-FSSAI_logo.svg.png" alt="FSSAI Certified" className="h-20 w-auto relative z-10" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-800">FSSAI Certified</h3>
+                  <p className="text-gray-600">We comply with all food safety standards set by the Food Safety and Standards Authority of India.</p>
+                  <span className="mt-4 text-xs px-3 py-1 bg-red-100 text-red-800 rounded-full font-medium">
+                    Verified & Current
+                  </span>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Team section could be added here if needed */}
 
       {/* CTA Section */}
       <section className="py-16 bg-agro-leaf text-white">
@@ -257,6 +365,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </Layout>
   );
 };

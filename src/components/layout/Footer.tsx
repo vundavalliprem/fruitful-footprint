@@ -23,25 +23,25 @@ const Footer = () => {
     <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
+          {/* Company Info with Updated Logo */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="relative mr-3 h-10 w-10 bg-gradient-to-br from-agro-leaf via-green-600 to-agro-mango rounded-lg overflow-hidden flex items-center justify-center shadow-md">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
+              <div className="relative mr-3 h-14 w-14 bg-gradient-to-br from-green-600 to-yellow-500 rounded-lg overflow-hidden flex items-center justify-center shadow-md">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
+                  <path d="M20 5C13.925 5 9 9.925 9 16C9 22.075 13.925 27 20 27C26.075 27 31 22.075 31 16C31 9.925 26.075 5 20 5Z" fill="url(#footerGradient)" />
+                  <path d="M14 16C14 13.791 15.791 12 18 12H22C24.209 12 26 13.791 26 16V16C26 18.209 24.209 20 22 20H18C15.791 20 14 18.209 14 16V16Z" fill="white" />
+                  <path d="M20 22C18.895 22 18 22.895 18 24C18 25.105 18.895 26 20 26C21.105 26 22 25.105 22 24C22 22.895 21.105 22 20 22Z" fill="white" />
                   <defs>
-                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#4D7C0F" />
-                      <stop offset="100%" stopColor="#65a30d" />
+                    <linearGradient id="footerGradient" x1="9" y1="5" x2="31" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stopColor="#4ADE80" />
+                      <stop offset="1" stopColor="#F59E0B" />
                     </linearGradient>
                   </defs>
-                  <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5Z" fill="#FFFFFF" fillOpacity="0.9"/>
-                  <path d="M20 8C16 8 12 11 12 16C12 21 16 28 20 28C24 28 28 21 28 16C28 11 24 8 20 8Z" fill="url(#footerLogoGradient)" fillOpacity="0.9"/>
-                  <path d="M20 16C18 16 16 18 16 20C16 22 18 24 20 24C22 24 24 22 24 20C24 18 22 16 20 16Z" fill="#FFA62B" fillOpacity="0.9"/>
                 </svg>
-                <div className="absolute inset-0 bg-gradient-to-br from-agro-leaf/20 via-green-600/20 to-agro-mango/20 rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/20 rounded-lg"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-agro-leaf tracking-wider">ARGO<span className="text-agro-mango">VITAL</span></span>
+                <span className="text-xl font-bold tracking-wider">ARGO<span className="text-orange-500">VITAL</span></span>
                 <span className="text-xs tracking-widest text-gray-600">PREMIUM EXPORTS</span>
               </div>
             </div>
