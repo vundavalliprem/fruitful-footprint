@@ -179,8 +179,9 @@ const GlobalReachPreview = () => {
         </div>
       </div>
       
-      {/* CSS for animations */}
-      <style jsx>{`
+      {/* CSS for animations - Fixed jsx attribute issue */}
+      <style>
+        {`
         @keyframes animatePath {
           0% { width: 0; }
           60% { width: 100%; }
@@ -222,7 +223,8 @@ const GlobalReachPreview = () => {
         .animate-route .package-icon {
           animation: deliverPackage 3s forwards;
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
