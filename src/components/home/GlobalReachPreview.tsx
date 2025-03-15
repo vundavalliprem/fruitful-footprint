@@ -53,7 +53,7 @@ const GlobalReachPreview = () => {
     const container = animationContainerRef.current;
     if (!container) return;
     
-    const globe = container.querySelector('.globe-container');
+    const globe = container.querySelector('.globe-container') as HTMLDivElement;
     if (!globe) return;
     
     let isMouseDown = false;
@@ -78,13 +78,13 @@ const GlobalReachPreview = () => {
       }
     };
     
-    const handleMouseDown = (e) => {
+    const handleMouseDown = (e: MouseEvent) => {
       isMouseDown = true;
       startRotationX = e.clientX;
       startRotationY = e.clientY;
     };
     
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!isMouseDown) return;
       
       const deltaX = e.clientX - startRotationX;
